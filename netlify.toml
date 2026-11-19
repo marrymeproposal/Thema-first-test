@@ -1,0 +1,8 @@
+[[headers]]
+  for = "/f/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+[[headers]]
+  for = "/p/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
