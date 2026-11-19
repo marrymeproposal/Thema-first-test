@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>MarryMe Proposal</title>
+<meta name="description" content="MarryMe Proposal organiseert onvergetelijke huwelijksaanzoeken: bloemenharten, kaarslicht, live muziek en professionele fotografie en film.">
+<meta property="og:title" content="MarryMe Proposal">
+<meta property="og:description" content="Wij ontwerpen het moment. Jij stelt de vraag.">
+<meta property="og:image" content="/f/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Figtree:wght@400;500;600&family=Dancing+Script:wght@500;600&display=swap">
+<style>
+/* Layout: film-lit black stage with a neon proposal line in the hero, cream paper bands for reading,
+   gold hairlines for structure. Calm home (film, intro, settings, story, words, invitation); detail lives on its own pages. */
+:root {
+  --ink: #0d0b09;
+  --ink-2: #16120d;
+  --cream: #f4ece0;
+  --paper: #f6efe4;
+  --gold: #c9a45c;
+  --gold-soft: #e7d2a0;
+  --gold-deep: #7e5f22;
+  --muted: #c3b8a6;
+  --ink-muted: #4a4035;
+  --line: rgba(201,164,92,.3);
+  --line-paper: rgba(126,95,34,.28);
+  --neon: #fff8ec;
+  --wa: #25d366;
+  --display: "Playfair Display", "Didot", Georgia, serif;
+  --body: "Figtree", "Helvetica Neue", Arial, sans-serif;
+  --script: "Dancing Script", "Snell Roundhand", "Brush Script MT", cursive;
+  --hh: 72px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--ink); color: var(--cream); font: 17px/1.7 var(--body); }
+.wrap { max-width: 1200px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.15; text-wrap: balance; margin: 0; }
+h1 em, h2 em { color: var(--gold); font-style: italic; }
+p, figure, blockquote { margin: 0; }
+img, video { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.view[hidden] { display: none !important; }
+.eyebrow { font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+.ico { width: 18px; height: 18px; flex: none; }
+html.lock { overflow: hidden; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+.rv.in { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
+
+/* ---------- Header ---------- */
+header { position: fixed; inset: 0 0 auto; z-index: 30; padding-top: env(safe-area-inset-top, 0px); transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
+header.solid { background: rgba(13,11,9,.97); border-bottom-color: var(--line); }
+.bar { display: flex; align-items: center; gap: 20px; height: 72px; }
+.logo { background: none; border: 0; padding: 0; flex: none; }
+.logo img { height: 34px; width: auto; }
+.mainnav { display: flex; align-items: center; gap: 2px; margin-left: auto; }
+.mainnav > button, .dd-btn { background: none; border: 0; color: #e6dccb; padding: 10px 12px; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; position: relative; display: inline-flex; align-items: center; gap: 6px; }
+.mainnav > button::after, .dd-btn::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 1px; background: var(--gold); transform: scaleX(0); transition: transform .3s; transform-origin: left; }
+.mainnav > button:hover::after, .dd-btn:hover::after, .mainnav [aria-current="page"]::after { transform: scaleX(1); }
+.mainnav [aria-current="page"] { color: var(--gold-soft); }
+.dd { position: relative; }
+.dd-btn svg { width: 10px; height: 10px; transition: transform .25s; }
+.dd-menu { position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%); min-width: 260px; background: #15110c; border: 1px solid var(--line); border-radius: 6px; padding: 8px; display: none; gap: 2px; box-shadow: 0 24px 60px rgba(0,0,0,.5); }
+.dd-menu::before { content: ""; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+.dd.open .dd-menu { display: grid; }
+@media (hover: hover) { .dd:not(.shut):hover .dd-menu { display: grid; } .dd:not(.shut):hover .dd-btn svg { transform: rotate(180deg); } }
+.dd-menu button { background: none; border: 0; text-align: left; padding: 10px 12px; border-radius: 4px; display: flex; justify-content: space-between; gap: 16px; font-size: .95rem; color: var(--cream); }
+.dd-menu button small { color: var(--muted); font-variant-numeric: tabular-nums; }
+.dd-menu button:hover { background: rgba(201,164,92,.12); color: var(--gold-soft); }
+.dd-menu hr { border: 0; border-top: 1px solid var(--line); margin: 4px 6px; }
+.lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; flex: none; background: rgba(13,11,9,.4); }
+.lang button { background: none; border: 0; color: #d6cbb8; padding: 6px 10px; font-size: .74rem; font-weight: 600; letter-spacing: .08em; }
+.lang button[aria-pressed="true"] { background: var(--gold); color: var(--ink); }
+.menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: 999px; width: 42px; height: 42px; place-items: center; flex: none; }
+.menu-btn span, .menu-btn span::before, .menu-btn span::after { display: block; width: 16px; height: 1.5px; background: var(--cream); position: relative; }
+.menu-btn span::before, .menu-btn span::after { content: ""; position: absolute; left: 0; }
+.menu-btn span::before { top: -5px; } .menu-btn span::after { top: 5px; }
+@media (max-width: 1120px) { .mainnav { display: none; } .menu-btn { display: grid; } .lang { margin-left: auto; } }
+@media (max-width: 420px) { .logo img { height: 26px; } .bar { gap: 10px; } .lang button { padding: 6px 8px; } }
+
+.mnav { position: fixed; inset: 0; z-index: 40; background: var(--ink); display: grid; grid-template-rows: auto 1fr auto; padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px); }
+.mnav .bar { justify-content: space-between; }
+.mnav-close { background: none; border: 1px solid var(--line); border-radius: 999px; width: 42px; height: 42px; font-size: 1.1rem; color: var(--gold-soft); }
+.mnav-list { overflow-y: auto; padding-block: 12px 24px; display: grid; align-content: start; }
+.mnav-list > button { background: none; border: 0; border-bottom: 1px solid var(--line); text-align: left; padding: 15px 0; font-family: var(--display); font-size: 1.6rem; color: var(--cream); }
+.mnav-sub { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 0 18px; border-bottom: 1px solid var(--line); }
+.mnav-sub button { background: none; border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; font-size: .9rem; color: var(--gold-soft); }
+.mnav-foot { padding-block: 18px; border-top: 1px solid var(--line); display: flex; gap: 12px; flex-wrap: wrap; }
+
+main { padding-top: var(--hh); }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 28px; border-radius: 999px; font-weight: 600; font-size: .92rem; letter-spacing: .04em; border: 1px solid var(--gold); transition: background .2s, color .2s; text-decoration: none; }
+.btn-gold { background: var(--gold); color: var(--ink); }
+.btn-gold:hover { background: var(--gold-soft); }
+.btn-line { background: rgba(13,11,9,.35); color: var(--gold-soft); }
+.btn-line:hover { background: rgba(201,164,92,.16); }
+.paper .btn-line { background: transparent; color: var(--gold-deep); border-color: var(--gold-deep); }
+.paper .btn-line:hover { background: rgba(126,95,34,.08); }
+.link { background: none; border: 0; padding: 0; color: var(--gold-soft); font-weight: 600; letter-spacing: .03em; display: inline-flex; gap: 10px; align-items: center; text-decoration: none; }
+.link::after { content: "→"; transition: transform .25s; }
+.link:hover::after { transform: translateX(4px); }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; overflow: hidden; margin-top: calc(-1 * var(--hh)); min-height: min(820px, 90vh); display: grid; grid-template-rows: 1fr auto; background: var(--ink); isolation: isolate; }
+.hero video, .hero .poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.hero .shade { position: absolute; inset: 0; z-index: -1; background:
+  radial-gradient(ellipse 70% 55% at 50% 50%, rgba(13,11,9,.3), rgba(13,11,9,.7) 100%),
+  linear-gradient(180deg, rgba(13,11,9,.7) 0%, rgba(13,11,9,.1) 25%, rgba(13,11,9,.2) 60%, rgba(13,11,9,.9) 100%); }
+.hero-in { align-self: center; text-align: center; display: grid; justify-items: center; gap: 22px; padding-block: calc(var(--hh) + 40px) 36px; }
+.neon { display: grid; width: 100%; font-family: var(--script); font-weight: 600; font-size: clamp(2.6rem, 7vw, 6rem); line-height: 1.15; color: var(--neon); }
+.neon span { grid-area: 1 / 1; align-self: center; text-wrap: balance; opacity: 0; transition: opacity .9s ease; text-shadow: 0 0 4px rgba(255,255,255,.85), 0 0 16px rgba(255,236,206,.7), 0 0 38px rgba(201,164,92,.55); }
+.neon span.on { opacity: 1; }
+@media (max-width: 640px) { .neon { font-size: clamp(2.4rem, 11vw, 3.2rem); } }
+.hero h1 { font-size: clamp(1.45rem, 2.8vw, 2.1rem); max-width: 30ch; color: var(--cream); }
+.hero .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 6px; }
+.hero-play { position: absolute; z-index: 2; right: max(24px, env(safe-area-inset-right, 0px)); top: calc(var(--hh) + 24px); width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgba(231,210,160,.75); background: rgba(13,11,9,.55); display: grid; place-items: center; }
+.hero-play span { border-left: 18px solid var(--gold-soft); border-top: 11px solid transparent; border-bottom: 11px solid transparent; margin-left: 5px; }
+@media (max-width: 640px) { .hero-play { top: auto; bottom: 86px; right: 50%; transform: translateX(50%); } }
+.hero-foot { display: flex; align-items: center; justify-content: flex-end; gap: 18px; padding-block: 18px 26px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.facts span { display: inline-flex; align-items: center; gap: 10px; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-soft); }
+.facts span::before { content: ""; width: 5px; height: 5px; transform: rotate(45deg); background: var(--gold); }
+.vbtn { background: rgba(13,11,9,.5); border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-soft); }
+@media (max-width: 640px) { .hero-foot { justify-content: center; } .facts { justify-content: center; } .facts span { font-size: .72rem; } }
+
+/* ---------- Sections ---------- */
+.section { padding-block: clamp(80px, 11vw, 140px); }
+.paper { background: var(--paper); color: var(--ink); }
+.paper .eyebrow { color: var(--gold-deep); }
+.paper h2 em { color: var(--gold-deep); }
+.dark2 { background: var(--ink-2); }
+.head { display: grid; gap: 16px; max-width: 680px; margin-bottom: 56px; }
+.head h2 { font-size: clamp(2.1rem, 4.4vw, 3.3rem); }
+.head p { color: var(--muted); font-size: 1.08rem; }
+.paper .head p { color: var(--ink-muted); }
+.head-row { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 56px; }
+.head-row .head { margin-bottom: 0; }
+
+/* Intro */
+.intro { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 7vw, 100px); align-items: start; }
+.intro h2 { font-size: clamp(2.1rem, 4.2vw, 3.2rem); margin-top: 16px; }
+.intro .txt { display: grid; gap: 28px; padding-top: 34px; }
+.intro .txt > p { color: var(--ink-muted); font-size: 1.12rem; }
+.svc { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--line-paper); }
+.svc li { display: grid; grid-template-columns: 34px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line-paper); }
+.svc svg { width: 26px; height: 26px; color: var(--gold-deep); margin-top: 3px; }
+.svc b { display: block; font-weight: 600; font-size: 1.02rem; }
+.svc span { color: var(--ink-muted); font-size: .98rem; }
+@media (max-width: 860px) { .intro { grid-template-columns: 1fr; } .intro .txt { padding-top: 0; } }
+
+/* Settings */
+.cats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.cat { position: relative; aspect-ratio: 3 / 4.2; overflow: hidden; border-radius: 4px; border: 0; padding: 0; text-align: left; color: var(--cream); background: var(--ink-2); min-width: 0; }
+.cat img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s ease; }
+.cat:hover img { transform: scale(1.05); }
+.cat::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,8,6,.88) 5%, rgba(10,8,6,0) 55%); }
+.cat .lbl { position: absolute; left: 20px; right: 20px; bottom: 20px; z-index: 1; display: grid; gap: 6px; }
+.cat .lbl b { font-family: var(--display); font-weight: 400; font-size: 1.5rem; line-height: 1.15; }
+.cat .lbl small { font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-soft); }
+@media (max-width: 900px) { .cats { grid-template-columns: 1fr 1fr; } .cat:last-child { grid-column: span 2; aspect-ratio: 16 / 9; } }
+@media (max-width: 420px) { .cats { gap: 10px; } .cat .lbl { left: 14px; right: 14px; bottom: 14px; } .cat .lbl b { font-size: 1.2rem; } .cat .lbl small { font-size: .68rem; letter-spacing: .08em; } }
+
+/* About teaser */
+.about-teaser { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 7vw, 100px); align-items: center; }
+.collage { position: relative; aspect-ratio: 1 / 1.05; min-width: 0; }
+.collage img { position: absolute; object-fit: cover; border-radius: 4px; }
+.collage .a { inset: 0 22% 18% 0; width: 78%; height: 82%; }
+.collage .b { right: 0; bottom: 0; width: 46%; height: 52%; border: 6px solid var(--paper); }
+.collage .stamp { position: absolute; left: 6%; bottom: 4%; background: var(--ink); color: var(--gold-soft); border-radius: 50%; width: 112px; height: 112px; display: grid; place-items: center; text-align: center; border: 1px solid var(--gold); }
+.collage .stamp b { display: block; font-family: var(--display); font-size: 1.9rem; font-weight: 400; color: var(--cream); line-height: 1.1; }
+.collage .stamp small { font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; }
+.about-teaser .txt { display: grid; gap: 22px; min-width: 0; }
+.about-teaser h2 { font-size: clamp(2.1rem, 4.2vw, 3.2rem); }
+.about-teaser p { color: var(--ink-muted); font-size: 1.1rem; max-width: 50ch; }
+@media (max-width: 820px) { .about-teaser { grid-template-columns: 1fr; } .collage { max-width: 520px; } }
+
+/* Reviews (text only, calm) */
+.quotes { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); }
+.quote { display: grid; gap: 20px; align-content: start; padding-top: 28px; border-top: 1px solid var(--line); min-width: 0; }
+.quote blockquote { font-family: var(--display); font-size: clamp(1.3rem, 2.2vw, 1.7rem); line-height: 1.45; }
+.quote cite { font-style: normal; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-soft); font-weight: 600; }
+.stars { color: var(--gold); letter-spacing: .3em; font-size: .9rem; }
+.quotes-foot { margin-top: 44px; color: var(--muted); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.quotes-foot a { color: var(--gold-soft); font-weight: 600; text-decoration: none; display: inline-flex; gap: 8px; align-items: center; }
+.quotes-foot a:hover { text-decoration: underline; }
+@media (max-width: 760px) { .quotes { grid-template-columns: 1fr; } }
+
+/* CTA band */
+.cta-band { position: relative; overflow: hidden; text-align: center; isolation: isolate; }
+.cta-band > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.cta-band::after { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at center, rgba(13,11,9,.5), rgba(13,11,9,.88)); }
+.cta-band .wrap { display: grid; justify-items: center; gap: 24px; padding-block: clamp(100px, 13vw, 170px); }
+.cta-band h2 { font-size: clamp(2rem, 4.4vw, 3.2rem); }
+.cta-band .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+/* ---------- Page heads ---------- */
+.pagehead { position: relative; overflow: hidden; margin-top: calc(-1 * var(--hh)); isolation: isolate; }
+.pagehead > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.pagehead::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(13,11,9,.82), rgba(13,11,9,.5) 40%, rgba(13,11,9,.95)); }
+.pagehead .wrap { padding-block: calc(var(--hh) + clamp(70px, 10vw, 130px)) clamp(56px, 7vw, 90px); display: grid; gap: 18px; }
+.pagehead h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); max-width: 16ch; }
+.pagehead p { max-width: 56ch; color: #e2d8c7; font-size: 1.12rem; }
+
+/* ---------- About page ---------- */
+.chapter { display: grid; grid-template-columns: 200px 1fr; gap: clamp(20px, 5vw, 64px); padding-block: 40px; border-top: 1px solid var(--line-paper); max-width: 1000px; }
+.chapter:last-of-type { border-bottom: 1px solid var(--line-paper); }
+.chapter .yr { font-family: var(--display); font-style: italic; font-size: clamp(2rem, 3.6vw, 2.8rem); color: var(--gold-deep); line-height: 1.1; }
+.chapter h3 { font-size: 1.7rem; margin-bottom: 10px; }
+.chapter p { color: var(--ink-muted); font-size: 1.06rem; max-width: 60ch; }
+@media (max-width: 640px) { .chapter { grid-template-columns: 1fr; gap: 10px; } }
+.strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 64px; }
+.strip img { aspect-ratio: 3 / 4; object-fit: cover; width: 100%; border-radius: 4px; }
+@media (max-width: 700px) { .strip { grid-template-columns: 1fr 1fr; } }
+.values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.value { padding: 32px 28px; border: 1px solid var(--line); border-radius: 6px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.value svg { width: 30px; height: 30px; color: var(--gold); }
+.value h3 { font-size: 1.5rem; }
+.value p { color: var(--muted); }
+@media (max-width: 820px) { .values { grid-template-columns: 1fr; } }
+
+/* ---------- Packages page ---------- */
+.pk-list { display: grid; }
+.pk { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; padding-block: clamp(48px, 7vw, 88px); border-top: 1px solid var(--line); }
+.pk:first-child { border-top: 0; padding-top: 0; }
+.pk:nth-child(even) .car { order: 2; }
+.pk .pk-info { display: grid; gap: 20px; min-width: 0; }
+.pk h2 { font-size: clamp(2rem, 3.6vw, 2.8rem); }
+.pk .tagline { color: var(--muted); font-size: 1.08rem; max-width: 46ch; }
+.pk .meta { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.pk .price { font-family: var(--display); font-size: 2.8rem; line-height: 1; color: var(--gold-soft); font-variant-numeric: lining-nums tabular-nums; }
+.chip { display: inline-flex; gap: 8px; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; font-size: .8rem; letter-spacing: .06em; color: #e2d8c7; }
+.chip i { width: 11px; height: 11px; border-radius: 50%; display: block; border: 1px solid rgba(255,255,255,.3); }
+.pk h3 { font-family: var(--body); font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); font-weight: 600; padding-top: 20px; border-top: 1px solid var(--line); }
+.pk ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+.pk li { display: grid; grid-template-columns: 14px 1fr; gap: 10px; font-size: .98rem; }
+.pk li::before { content: ""; width: 6px; height: 6px; margin-top: .66em; transform: rotate(45deg); background: var(--gold); }
+.pk li.plus { color: var(--gold-soft); }
+.pk .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; }
+@media (max-width: 900px) { .pk { grid-template-columns: 1fr; } .pk:nth-child(even) .car { order: 0; } }
+@media (max-width: 480px) { .pk ul { grid-template-columns: 1fr; } }
+
+.car { position: relative; min-width: 0; display: grid; gap: 12px; }
+.car-view { position: relative; border-radius: 4px; overflow: hidden; }
+.car-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; aspect-ratio: 4 / 4.6; overscroll-behavior-x: contain; }
+.car-track::-webkit-scrollbar { display: none; }
+.car-track img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; scroll-snap-align: start; }
+.car-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(231,210,160,.55); background: rgba(13,11,9,.6); color: var(--cream); display: grid; place-items: center; font-size: 1.2rem; }
+.car-btn.prev { left: 14px; } .car-btn.next { right: 14px; }
+.car-count { position: absolute; top: 14px; right: 14px; background: rgba(13,11,9,.75); border-radius: 999px; padding: 5px 12px; font-size: .76rem; letter-spacing: .08em; font-variant-numeric: tabular-nums; color: var(--gold-soft); }
+.thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.thumbs button { padding: 0; border: 1px solid transparent; border-radius: 3px; overflow: hidden; aspect-ratio: 1; background: var(--ink-2); opacity: .55; transition: opacity .2s, border-color .2s; }
+.thumbs button img { width: 100%; height: 100%; object-fit: cover; }
+.thumbs button[aria-current="true"] { opacity: 1; border-color: var(--gold); }
+.thumbs button:hover { opacity: .9; }
+
+.own { margin-top: 24px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 36px 38px; border: 1px solid var(--line); border-radius: 6px; background: linear-gradient(110deg, rgba(201,164,92,.12), transparent 60%); }
+.own h3 { font-size: 1.9rem; margin-bottom: 8px; }
+.own p { color: var(--muted); max-width: 60ch; }
+@media (max-width: 700px) { .own { grid-template-columns: 1fr; padding: 28px 22px; } }
+
+.extras { display: grid; grid-template-columns: 1fr 1.7fr; gap: 48px; }
+.extras .lead h2 { font-size: clamp(2rem, 3.6vw, 2.8rem); }
+.extras .lead p { color: var(--ink-muted); margin-top: 14px; }
+.extras .tables { display: grid; gap: 40px; min-width: 0; }
+.extras h3 { font-family: var(--body); margin: 0 0 6px; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; }
+.extras table { width: 100%; border-collapse: collapse; }
+.extras td { padding: 14px 0; border-bottom: 1px solid var(--line-paper); vertical-align: baseline; }
+.extras td small { color: var(--ink-muted); display: block; font-size: .86rem; }
+.extras td:last-child { text-align: right; color: var(--gold-deep); font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; padding-left: 16px; }
+.note { color: var(--ink-muted); font-size: .9rem; margin-top: 14px; }
+@media (max-width: 760px) { .extras { grid-template-columns: 1fr; gap: 24px; } }
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.steps li { display: grid; gap: 12px; align-content: start; padding-top: 22px; border-top: 1px solid var(--line); min-width: 0; }
+.steps .num { font-family: var(--display); font-size: 2.2rem; line-height: 1; color: var(--gold); }
+.steps h3 { font-size: 1.4rem; }
+.steps p { color: var(--muted); }
+@media (max-width: 900px) { .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+/* ---------- Gallery ---------- */
+.filter { position: sticky; top: calc(var(--hh) + env(safe-area-inset-top, 0px)); z-index: 5; background: rgba(13,11,9,.97); border-bottom: 1px solid var(--line); }
+.filter .wrap { display: flex; gap: 8px; overflow-x: auto; padding-block: 14px; scrollbar-width: none; }
+.filter .wrap::-webkit-scrollbar { display: none; }
+.filter button { flex: none; background: none; border: 1px solid var(--line); border-radius: 999px; padding: 9px 16px; font-size: .9rem; color: #e2d8c7; display: inline-flex; gap: 8px; align-items: center; }
+.filter button small { color: var(--muted); font-variant-numeric: tabular-nums; }
+.filter button[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.filter button[aria-pressed="true"] small { color: rgba(13,11,9,.65); }
+.gal-title { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 26px; scroll-margin-top: calc(var(--hh) + 90px); }
+.gal-title h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); }
+.gal-title p { color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; overflow-anchor: none; }
+@media (max-width: 860px) { .grid { grid-template-columns: 1fr 1fr; gap: 10px; } }
+.tile { display: block; width: 100%; aspect-ratio: 4 / 5; padding: 0; border: 0; background: var(--ink-2); position: relative; overflow: hidden; border-radius: 4px; text-align: left; color: var(--cream); min-width: 0; }
+.tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
+.tile:hover img { transform: scale(1.04); }
+.tile .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 44px 16px 14px; background: linear-gradient(to top, rgba(10,8,6,.85), transparent); font-size: .98rem; font-weight: 500; display: flex; justify-content: space-between; align-items: end; gap: 10px; }
+.tile .cap small { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-soft); white-space: nowrap; }
+.tile .play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 62px; height: 62px; border-radius: 50%; background: rgba(13,11,9,.6); border: 1px solid rgba(231,210,160,.7); display: grid; place-items: center; }
+.tile .play::after { content: ""; border-left: 16px solid var(--gold-soft); border-top: 10px solid transparent; border-bottom: 10px solid transparent; margin-left: 5px; }
+@media (max-width: 480px) { .tile .cap { font-size: .85rem; padding: 36px 10px 10px; } .tile .cap small { display: none; } .tile .play { width: 48px; height: 48px; } }
+
+.lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(8,7,5,.97); display: grid; place-items: center; padding: calc(64px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) calc(70px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.lightbox img, .lightbox video { max-height: 100%; max-width: 100%; object-fit: contain; border-radius: 2px; }
+.lightbox video { width: min(100%, 1100px); background: #000; }
+.lightbox > button { position: absolute; background: rgba(13,11,9,.7); border: 1px solid var(--line); color: var(--gold-soft); width: 48px; height: 48px; border-radius: 50%; font-size: 1.3rem; display: grid; place-items: center; }
+.lb-close { top: calc(12px + env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); }
+.lb-prev { left: max(16px, env(safe-area-inset-left, 0px)); top: 50%; transform: translateY(-50%); }
+.lb-next { right: max(16px, env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%); }
+.lb-cap { position: absolute; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); left: 70px; right: 70px; text-align: center; font-size: 1rem; }
+.lb-cap small { display: block; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-variant-numeric: tabular-nums; }
+
+/* ---------- FAQ ---------- */
+.faq-wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 6vw, 88px); align-items: start; }
+.faq-side { display: grid; gap: 18px; position: sticky; top: calc(var(--hh) + 40px); }
+.faq-side h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); }
+.faq-side p { color: var(--ink-muted); }
+.faq-group + .faq-group { margin-top: 48px; }
+.faq-group h3 { font-family: var(--body); font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; color: var(--gold-deep); margin-bottom: 6px; }
+details { border-bottom: 1px solid var(--line-paper); }
+summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 0; font-size: 1.08rem; font-weight: 600; line-height: 1.4; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: ""; flex: none; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line-paper); background: linear-gradient(var(--gold-deep), var(--gold-deep)) center / 11px 1.5px no-repeat, linear-gradient(var(--gold-deep), var(--gold-deep)) center / 1.5px 11px no-repeat; transition: transform .25s; }
+details[open] summary::after { transform: rotate(45deg); }
+details .ans { padding: 0 50px 22px 0; color: var(--ink-muted); max-width: 64ch; }
+@media (max-width: 820px) { .faq-wrap { grid-template-columns: 1fr; } .faq-side { position: static; } details .ans { padding-right: 0; } }
+
+/* ---------- Contact ---------- */
+.contact { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; min-width: 0; align-content: start; }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field.full { grid-column: 1 / -1; }
+label { font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; }
+label b { color: var(--gold-deep); }
+input, select, textarea { font: inherit; font-size: 1rem; color: var(--ink); background: #fffaf2; border: 1px solid #d9caae; border-radius: 4px; padding: 13px 14px; width: 100%; color-scheme: light; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--gold); outline-offset: 0; border-color: var(--gold); }
+textarea { min-height: 150px; resize: vertical; }
+form .btn { justify-self: start; }
+.ok { grid-column: 1 / -1; background: var(--ink); color: var(--cream); padding: 18px 20px; border-radius: 4px; border-left: 3px solid var(--gold); }
+.info { display: grid; gap: 4px; align-content: start; border-left: 1px solid var(--line-paper); padding-left: 36px; min-width: 0; }
+.info h3 { font-size: 1.7rem; margin-bottom: 14px; }
+.cline { display: grid; grid-template-columns: 42px 1fr; gap: 14px; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--line-paper); text-decoration: none; }
+.cline .ci { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line-paper); display: grid; place-items: center; color: var(--gold-deep); }
+.cline small { display: block; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; }
+.cline strong { font-weight: 500; font-size: 1.02rem; overflow-wrap: anywhere; }
+a.cline:hover strong { text-decoration: underline; }
+.hours { margin-top: 20px; background: var(--ink); color: var(--cream); padding: 16px 18px; border-radius: 4px; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; display: flex; gap: 12px; align-items: center; }
+.hours::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--wa); box-shadow: 0 0 0 4px rgba(37,211,102,.2); flex: none; }
+@media (max-width: 840px) { .contact { grid-template-columns: 1fr; } .info { border-left: 0; padding-left: 0; border-top: 1px solid var(--line-paper); padding-top: 28px; } }
+@media (max-width: 520px) { form { grid-template-columns: 1fr; } }
+
+/* ---------- Footer ---------- */
+footer { border-top: 1px solid var(--line); background: #090806; color: var(--muted); }
+.foot-ask { border-bottom: 1px solid var(--line); }
+.foot-ask .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding-block: 44px; }
+.foot-ask h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); color: var(--cream); }
+.foot-ask .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-block: 60px 44px; }
+.foot-grid > div { min-width: 0; display: grid; gap: 10px; align-content: start; }
+.foot-grid img { height: 74px; width: auto; margin-bottom: 6px; }
+.foot-grid h4 { margin: 0 0 6px; font-size: .76rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+.foot-grid p, .foot-grid a, .foot-grid button { font-size: .98rem; }
+.foot-grid a, .foot-grid button { color: var(--cream); text-decoration: none; background: none; border: 0; padding: 0; text-align: left; overflow-wrap: anywhere; justify-self: start; }
+.foot-grid a:hover, .foot-grid button:hover { color: var(--gold-soft); }
+.socials { display: flex; gap: 10px; margin-top: 6px; }
+.socials a { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--gold-soft); }
+.socials a:hover { background: rgba(201,164,92,.14); }
+.foot-bottom { border-top: 1px solid var(--line); }
+.foot-bottom .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-block: 22px; font-size: .86rem; }
+@media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .foot-grid { grid-template-columns: 1fr; } }
+
+.wa-float { position: fixed; z-index: 25; right: calc(18px + env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); width: 56px; height: 56px; border-radius: 50%; background: var(--wa); color: #fff; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+.wa-float svg { width: 29px; height: 29px; }
+
+
+
+
+.credit { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; font-size: .82rem; }
+.credit b { color: var(--gold-soft); font-weight: 600; letter-spacing: .04em; }
+.credit .ico { width: 15px; height: 15px; color: var(--gold-soft); }
+.credit:hover b { text-decoration: underline; }
+
+/* Team */
+.lead-member { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(24px, 5vw, 64px); align-items: center; text-decoration: none; color: inherit; margin-bottom: 48px; }
+.lead-member img { width: 100%; aspect-ratio: 4 / 4.2; object-fit: cover; border-radius: 4px; }
+.lm-txt { display: grid; gap: 12px; }
+.lm-txt small { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; }
+.lm-txt b { font-family: var(--display); font-weight: 400; font-size: clamp(2.2rem, 4.4vw, 3.4rem); line-height: 1.1; }
+.lm-txt > span { color: var(--ink-muted); font-size: 1.1rem; max-width: 46ch; }
+.lm-txt em, .member em { font-style: normal; color: var(--gold-deep); font-weight: 600; display: inline-flex; gap: 8px; align-items: center; }
+.lead-member:hover em { text-decoration: underline; }
+.members { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.member { display: grid; gap: 12px; text-decoration: none; color: inherit; min-width: 0; }
+.member img { width: 100%; aspect-ratio: 4 / 4.6; object-fit: cover; border-radius: 4px; transition: transform .6s ease; }
+.member:hover img { transform: scale(1.02); }
+.member span { display: grid; gap: 2px; }
+.member b { font-family: var(--display); font-weight: 400; font-size: 1.35rem; }
+.member small { color: var(--ink-muted); font-size: .95rem; }
+.member em { font-size: .9rem; margin-top: 4px; }
+@media (max-width: 860px) { .lead-member { grid-template-columns: 1fr; } .members { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 420px) { .members { gap: 14px; } .member b { font-size: 1.15rem; } }
+.quotes.three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 960px) { .quotes.three { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .quotes.three { grid-template-columns: 1fr; } }
+.quote blockquote { font-size: clamp(1.15rem, 1.8vw, 1.4rem); }
+
+.swipe-hint { display: none; }
+/* phone: swipe rows instead of long stacks */
+@media (max-width: 860px) {
+  .members, .quotes.three { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; padding-bottom: 10px; margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px))); padding-right: max(16px, env(safe-area-inset-right, 0px)); scrollbar-width: none; }
+  .members::-webkit-scrollbar, .quotes.three::-webkit-scrollbar { display: none; }
+  .members > .member { flex: 0 0 62%; scroll-snap-align: start; }
+  .quotes.three > .quote { flex: 0 0 82%; scroll-snap-align: start; }
+  .swipe-hint { display: flex; }
+}
+.swipe-hint { align-items: center; gap: 8px; margin-top: 14px; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-deep); }
+.swipe-hint.on-dark { color: var(--gold-soft); }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.4c.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.1-.4z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 6.5 12 13l8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 3h3l1.5 4-2 1.3a11 11 0 0 0 6.6 6.6l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.2 2 2 0 0 1 6.6 3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 10 10"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 34 34"><path d="M17 30S4 22 4 12.5A6.5 6.5 0 0 1 17 9a6.5 6.5 0 0 1 13 3.5C30 22 17 30 17 30z" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 34 34"><g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="9" width="28" height="19" rx="2"/><circle cx="17" cy="18.5" r="6"/><path d="M11 9l2-4h8l2 4"/></g></symbol>
+  <symbol id="i-violin" viewBox="0 0 34 34"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 4c-3 0-4 3-3 5-3 1-5 4-4 8 1 3-1 5-1 8 0 4 4 6 8 6s8-2 8-6c0-3-2-5-1-8 1-4-1-7-4-8 1-2 0-5-3-5z"/><path d="M17 4v27M14 19h6"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 34 34"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="17" cy="17" r="13"/><path d="M11 17.5l4 4 8-9"/></g></symbol>
+  <symbol id="i-person" viewBox="0 0 34 34"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="17" cy="11" r="6"/><path d="M5 30c1.5-6.5 6-10 12-10s10.5 3.5 12 10"/></g></symbol>
+  <symbol id="i-eye" viewBox="0 0 34 34"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17s5-9 14-9 14 9 14 9-5 9-14 9S3 17 3 17z"/><circle cx="17" cy="17" r="4"/><path d="M5 29 29 5"/></g></symbol>
+  <symbol id="i-detail" viewBox="0 0 34 34"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 13 17 4l9 9-9 17z"/><path d="M8 13h18M13 13l4 17 4-17"/></g></symbol>
+</svg>
+
+<header id="hdr">
+  <div class="wrap bar" id="bar">
+    <button class="logo" data-go="home" aria-label="MarryMe Proposal"><img src="img/logo-row.png" alt="MarryMe Proposal"></button>
+    <nav class="mainnav" aria-label="Menu">
+      <button data-go="home" data-i18n="nav.home"></button>
+      <button data-go="over" data-i18n="nav.about"></button>
+      <button data-go="pakketten" data-i18n="nav.packages"></button>
+      <div class="dd" id="dd">
+        <button class="dd-btn" id="dd-btn" aria-expanded="false" aria-haspopup="true" data-navgo="galerij"><span data-i18n="nav.gallery"></span><svg><use href="#i-chev"/></svg></button>
+        <div class="dd-menu" id="dd-menu"></div>
+      </div>
+      <button data-go="faq" data-i18n="nav.faq"></button>
+      <button data-go="contact" data-i18n="nav.contact"></button>
+    </nav>
+    <div class="lang" role="group" aria-label="Taal / Language / Sprache">
+      <button data-lang="nl" aria-pressed="true">NL</button>
+      <button data-lang="en" aria-pressed="false">EN</button>
+      <button data-lang="de" aria-pressed="false">DE</button>
+    </div>
+    <button class="menu-btn" id="menu-btn" aria-label="Menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<div class="mnav" id="mnav" hidden>
+  <div class="wrap bar">
+    <img src="img/logo-row.png" alt="MarryMe Proposal" style="height:28px;width:auto">
+    <button class="mnav-close" id="mnav-close" aria-label="Sluiten">✕</button>
+  </div>
+  <div class="wrap mnav-list">
+    <button data-go="home" data-i18n="nav.home"></button>
+    <button data-go="over" data-i18n="nav.about"></button>
+    <button data-go="pakketten" data-i18n="nav.packages"></button>
+    <button data-go="galerij" data-cat="kas" data-i18n="nav.gallery"></button>
+    <div class="mnav-sub" id="mnav-sub"></div>
+    <button data-go="faq" data-i18n="nav.faq"></button>
+    <button data-go="contact" data-i18n="nav.contact"></button>
+  </div>
+  <div class="wrap mnav-foot">
+    <a class="btn btn-gold" href="https://wa.me/31628505797" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>WhatsApp</a>
+    <a class="btn btn-line" href="https://www.instagram.com/marrymeproposal.nl/" target="_blank" rel="noopener"><svg class="ico"><use href="#i-ig"/></svg>Instagram</a>
+  </div>
+</div>
+
+<main>
+<!-- ===================== HOME ===================== -->
+<div class="view" data-view="home">
+  <section class="hero">
+    <img class="poster" src="f/hero.jpg" alt="">
+    <video id="hv" src="f/hero.mp4" poster="f/hero.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <div class="shade"></div>
+    <button class="hero-play" id="hero-play" hidden aria-label="Play"><span></span></button>
+    <div class="wrap hero-in">
+      <span class="eyebrow" data-i18n="hero.eyebrow"></span>
+      <p class="neon" id="neon" aria-label="Will you marry me?"></p>
+      <h1 data-i18n-html="hero.title"></h1>
+      <div class="actions">
+        <button class="btn btn-gold" data-go="contact" data-i18n="cta.plan"></button>
+        <button class="btn btn-line" data-go="galerij" data-cat="kas" data-i18n="cta.gallery"></button>
+      </div>
+    </div>
+    <div class="wrap hero-foot">
+      <button class="vbtn" id="vbtn"></button>
+    </div>
+  </section>
+
+  <section class="paper section">
+    <div class="wrap intro">
+      <div class="rv">
+        <span class="eyebrow">MarryMe Proposal</span>
+        <h2 data-i18n-html="in.title"></h2>
+      </div>
+      <div class="txt rv">
+        <p data-i18n="in.text"></p>
+        <ul class="svc">
+          <li><svg><use href="#i-heart"/></svg><div><b data-i18n="svc.1.t"></b><span data-i18n="svc.1.d"></span></div></li>
+          <li><svg><use href="#i-camera"/></svg><div><b data-i18n="svc.2.t"></b><span data-i18n="svc.2.d"></span></div></li>
+          <li><svg><use href="#i-violin"/></svg><div><b data-i18n="svc.3.t"></b><span data-i18n="svc.3.d"></span></div></li>
+          <li><svg><use href="#i-check"/></svg><div><b data-i18n="svc.4.t"></b><span data-i18n="svc.4.d"></span></div></li>
+        </ul>
+        <div><button class="btn btn-line" data-go="pakketten" data-i18n="cta.packages"></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head-row rv">
+        <div class="head">
+          <span class="eyebrow" data-i18n="gt.eyebrow"></span>
+          <h2 data-i18n-html="gt.title"></h2>
+          <p data-i18n="gt.sub"></p>
+        </div>
+        <button class="link" data-go="galerij" data-cat="kas" data-i18n="gt.all"></button>
+      </div>
+      <div class="cats rv" id="cats"></div>
+    </div>
+  </section>
+
+  <section class="paper section">
+    <div class="wrap about-teaser">
+      <div class="collage rv">
+        <img class="a" src="p/kas-img_1566.jpg" alt="" loading="lazy">
+        <img class="b" src="p/details-85.jpg" alt="" loading="lazy">
+        <div class="stamp"><span><small data-i18n="ab.since"></small><b>2023</b></span></div>
+      </div>
+      <div class="txt rv">
+        <span class="eyebrow" data-i18n="ab.eyebrow"></span>
+        <h2 data-i18n-html="ab.title"></h2>
+        <p data-i18n="ab.teaser"></p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-line" data-go="over" data-i18n="ab.more"></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="eyebrow" data-i18n="rev.eyebrow"></span>
+        <h2 data-i18n-html="rev.title"></h2>
+      </div>
+      <p class="swipe-hint on-dark" data-i18n="ui.swipe"></p>
+      <div class="quotes three rv">
+        <figure class="quote">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <blockquote lang="nl">“Mijn aanzoek was mooier dan ik ooit had durven dromen. Marry Me Proposal heeft werkelijk aan alles gedacht, van de kleinste details tot de prachtige locatie. Een onvergetelijke ervaring dankzij dit geweldige team.”</blockquote>
+          <cite data-i18n="rv.nl"></cite>
+        </figure>
+        <figure class="quote">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <blockquote lang="nl">“Alles was top geregeld: de organisatie, de fotografie en de service waren perfect! De foto- en videograaf is ook echt een aanrader.”</blockquote>
+          <cite data-i18n="rv.nl"></cite>
+        </figure>
+        <figure class="quote">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <blockquote lang="en">“Being in another country I thought it would be hard, but you made it feel great and easy going. Everything was stunning, from the decorations, the venue, the roses, the photos and videos.”</blockquote>
+          <cite data-i18n="rv.abroad"></cite>
+        </figure>
+      </div>
+      <p class="quotes-foot rv"><span data-i18n="rev.more"></span> <a href="https://www.instagram.com/marrymeproposal.nl/" target="_blank" rel="noopener"><svg class="ico"><use href="#i-ig"/></svg>@marrymeproposal.nl</a></p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <img src="w/home-cta.jpg" alt="" loading="lazy" style="object-position:50% 35%">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="cta.eyebrow"></span>
+      <h2 data-i18n-html="cta.title"></h2>
+      <div class="actions">
+        <button class="btn btn-gold" data-go="contact" data-i18n="cta.plan"></button>
+        <a class="btn btn-line" href="https://wa.me/31628505797" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== OVER ONS ===================== -->
+<div class="view" data-view="over" hidden>
+  <section class="pagehead">
+    <img src="w/over-head.jpg" alt="" style="object-position:50% 30%">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="about.eyebrow"></span>
+      <h1 data-i18n-html="about.title"></h1>
+      <p data-i18n="about.lead"></p>
+    </div>
+  </section>
+  <section class="paper section">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="eyebrow" data-i18n="about.story"></span>
+        <h2 data-i18n-html="about.storyt"></h2>
+      </div>
+      <div class="chapter rv"><span class="yr" data-i18n="about.s1.y"></span><div><h3 data-i18n="about.s1.t"></h3><p data-i18n="about.s1.d"></p></div></div>
+      <div class="chapter rv"><span class="yr">2023</span><div><h3 data-i18n="about.s2.t"></h3><p data-i18n="about.s2.d"></p></div></div>
+      <div class="chapter rv"><span class="yr" data-i18n="about.s3.y"></span><div><h3 data-i18n="about.s3.t"></h3><p data-i18n="about.s3.d"></p></div></div>
+      <div class="strip rv">
+        <img src="team/team-shirt.jpg" alt="" loading="lazy">
+        <img src="p/kas-28.jpg" alt="" loading="lazy">
+        <img src="p/skyline-77.jpg" alt="" loading="lazy">
+        <img src="p/details-24.jpg" alt="" loading="lazy">
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="eyebrow" data-i18n="about.v.eyebrow"></span>
+        <h2 data-i18n-html="about.v.title"></h2>
+      </div>
+      <div class="values rv">
+        <div class="value"><svg><use href="#i-person"/></svg><h3 data-i18n="about.v1.t"></h3><p data-i18n="about.v1.d"></p></div>
+        <div class="value"><svg><use href="#i-detail"/></svg><h3 data-i18n="about.v2.t"></h3><p data-i18n="about.v2.d"></p></div>
+        <div class="value"><svg><use href="#i-eye"/></svg><h3 data-i18n="about.v3.t"></h3><p data-i18n="about.v3.d"></p></div>
+      </div>
+    </div>
+  </section>
+  <section class="paper section" id="team">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="eyebrow" data-i18n="tm.eyebrow"></span>
+        <h2 data-i18n-html="tm.title"></h2>
+        <p data-i18n="tm.sub"></p>
+      </div>
+      <a class="lead-member rv" href="https://www.instagram.com/simavideo/" target="_blank" rel="noopener">
+        <img src="team/emir.jpg" alt="Emir Ipekci" loading="lazy">
+        <span class="lm-txt"><small data-i18n="tm.lead"></small><b>Emir Ipekci</b><span data-i18n="tm.leadd"></span><em><svg class="ico"><use href="#i-ig"/></svg>@simavideo</em></span>
+      </a>
+      <p class="swipe-hint" data-i18n="ui.swipe"></p>
+      <div class="members rv">
+        <a class="member" href="https://www.instagram.com/cinemedia/" target="_blank" rel="noopener"><img src="team/vahdet.jpg" alt="Vahdet Dogan" loading="lazy"><span><b>Vahdet Dogan</b><small data-i18n="tm.photo"></small><em>@cinemedia</em></span></a>
+        <a class="member" href="https://www.instagram.com/glissmusicevents/" target="_blank" rel="noopener"><img src="team/gliss.jpg" alt="Gliss Music Events" loading="lazy"><span><b>Gliss Music Events</b><small data-i18n="tm.music"></small><em>@glissmusicevents</em></span></a>
+        <a class="member" href="https://www.instagram.com/mylifeasvally/" target="_blank" rel="noopener"><img src="team/valentine.jpg" alt="Valentine Ana" loading="lazy"><span><b>Valentine Ana</b><small data-i18n="tm.violin.f"></small><em>@mylifeasvally</em></span></a>
+        <a class="member" href="https://www.instagram.com/marjuviolin/" target="_blank" rel="noopener"><img src="team/marju.jpg" alt="Marju" loading="lazy"><span><b>Marju</b><small data-i18n="tm.violin.f"></small><em>@marjuviolin</em></span></a>
+        <a class="member" href="https://www.instagram.com/hannebruijnes/" target="_blank" rel="noopener"><img src="team/hanne.jpg" alt="Hanne Bruijnes" loading="lazy"><span><b>Hanne Bruijnes</b><small data-i18n="tm.piano.f"></small><em>@hannebruijnes</em></span></a>
+        <a class="member" href="https://www.instagram.com/pianistdilara/" target="_blank" rel="noopener"><img src="team/dilara.jpg" alt="Dilara" loading="lazy"><span><b>Dilara</b><small data-i18n="tm.piano.f"></small><em>@pianistdilara</em></span></a>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="eyebrow" data-i18n="rv.all.eyebrow"></span>
+        <h2 data-i18n-html="rv.all.title"></h2>
+      </div>
+      <p class="swipe-hint on-dark" data-i18n="ui.swipe"></p>
+      <div class="quotes three rv">
+        <figure class="quote">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <blockquote lang="nl">“Mijn aanzoek was mooier dan ik ooit had durven dromen. Marry Me Proposal heeft werkelijk aan alles gedacht, van de kleinste details tot de prachtige locatie. Een onvergetelijke ervaring dankzij dit geweldige team.”</blockquote>
+          <cite data-i18n="rv.nl"></cite>
+        </figure>
+        <figure class="quote">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <blockquote lang="nl">“Alles was top geregeld: de organisatie, de fotografie en de service waren perfect! De foto- en videograaf is ook echt een aanrader.”</blockquote>
+          <cite data-i18n="rv.nl"></cite>
+        </figure>
+        <figure class="quote">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <blockquote lang="en">“Being in another country I thought it would be hard, but you made it feel great and easy going. Everything was stunning, from the decorations, the venue, the roses, the photos and videos.”</blockquote>
+          <cite data-i18n="rv.abroad"></cite>
+        </figure>
+        <figure class="quote">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <blockquote lang="nl">“Vond de set-up echt super, en zij was er achteraf ook heel blij mee. Super geregeld, communicatie was top. Onze dank is groot!”</blockquote>
+          <cite data-i18n="rv.fam"></cite>
+        </figure>
+        <figure class="quote">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <blockquote lang="nl">“Heel erg bedankt voor alles, voor de mooie foto's en vooral ook voor het netjes opruimen van de kamer! We voelen ons echt verwend door jullie.”</blockquote>
+          <cite data-i18n="rv.nl"></cite>
+        </figure>
+        <figure class="quote">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <blockquote lang="nl">“Ik wil jullie bedanken voor jullie mooie dienst en goede zorg. Ik had het niet beter kunnen wensen.”</blockquote>
+          <cite data-i18n="rv.nl"></cite>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section class="cta-band">
+    <img src="w/over-cta.jpg" alt="" loading="lazy" style="object-position:50% 30%">
+    <div class="wrap">
+      <h2 data-i18n-html="about.cta"></h2>
+      <div class="actions"><button class="btn btn-gold" data-go="contact" data-i18n="cta.plan"></button><button class="btn btn-line" data-go="pakketten" data-i18n="cta.packages"></button></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== PAKKETTEN ===================== -->
+<div class="view" data-view="pakketten" hidden>
+  <section class="pagehead">
+    <img src="p/kas-img_4157.jpg" alt="" style="object-position:50% 60%">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="pr.eyebrow"></span>
+      <h1 data-i18n-html="pr.title"></h1>
+      <p data-i18n="pr.sub"></p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:clamp(56px,7vw,90px)">
+    <div class="wrap">
+      <div class="pk-list" id="pk-list"></div>
+      <div class="own rv">
+        <div><h3 data-i18n="pr.own.t"></h3><p data-i18n="pr.own.d"></p></div>
+        <button class="btn btn-gold" data-go="contact" data-subj="custom" data-i18n="pr.own.cta"></button>
+      </div>
+    </div>
+  </section>
+  <section class="paper section">
+    <div class="wrap extras">
+      <div class="lead rv">
+        <span class="eyebrow" data-i18n="ex.eyebrow"></span>
+        <h2 data-i18n-html="ex.title" style="margin-top:14px"></h2>
+        <p data-i18n="ex.sub"></p>
+      </div>
+      <div class="tables rv">
+        <div><h3 data-i18n="ex.h.deco"></h3><table><tbody id="ex-deco"></tbody></table></div>
+        <div><h3 data-i18n="ex.h.media"></h3><table><tbody id="ex-media"></tbody></table></div>
+        <div><h3 data-i18n="ex.h.letters"></h3><table><tbody id="ex-letters"></tbody></table><p class="note" data-i18n="ex.letters.note"></p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section dark2">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="eyebrow" data-i18n="how.eyebrow"></span>
+        <h2 data-i18n-html="how.title"></h2>
+      </div>
+      <ol class="steps rv">
+        <li><span class="num">1</span><h3 data-i18n="how.1.t"></h3><p data-i18n="how.1.d"></p></li>
+        <li><span class="num">2</span><h3 data-i18n="how.2.t"></h3><p data-i18n="how.2.d"></p></li>
+        <li><span class="num">3</span><h3 data-i18n="how.3.t"></h3><p data-i18n="how.3.d"></p></li>
+        <li><span class="num">4</span><h3 data-i18n="how.4.t"></h3><p data-i18n="how.4.d"></p></li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== GALERIJ ===================== -->
+<div class="view" data-view="galerij" hidden>
+  <section class="pagehead">
+    <img src="w/galerij-head.jpg" alt="" style="object-position:50% 50%">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="ga.eyebrow"></span>
+      <h1 data-i18n-html="ga.title"></h1>
+      <p data-i18n="ga.sub"></p>
+    </div>
+  </section>
+  <div class="filter"><div class="wrap" id="filter" role="group"></div></div>
+  <section class="section" style="padding-top:36px">
+    <div class="wrap">
+      <div class="gal-title" id="gal-top"><h2 id="gal-h"></h2><p id="gal-n"></p></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== VEELGESTELDE VRAGEN ===================== -->
+<div class="view" data-view="faq" hidden>
+  <section class="pagehead">
+    <img src="w/faq-head.jpg" alt="" style="object-position:50% 55%">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="faq.eyebrow"></span>
+      <h1 data-i18n-html="faq.title"></h1>
+      <p data-i18n="faq.sub"></p>
+    </div>
+  </section>
+  <section class="paper section">
+    <div class="wrap faq-wrap">
+      <div class="faq-side">
+        <h2 data-i18n-html="faq.more.t"></h2>
+        <p data-i18n="faq.more.d"></p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-gold" href="https://wa.me/31628505797" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>WhatsApp</a>
+          <button class="btn btn-line" data-go="contact" data-i18n="ft.form"></button>
+        </div>
+      </div>
+      <div id="faq-page"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== CONTACT ===================== -->
+<div class="view" data-view="contact" hidden>
+  <section class="pagehead">
+    <img src="w/contact-head.jpg" alt="" style="object-position:50% 40%">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="co.eyebrow"></span>
+      <h1 data-i18n-html="co.title"></h1>
+      <p data-i18n="co.sub"></p>
+    </div>
+  </section>
+  <section class="paper section">
+    <div class="wrap contact">
+      <form id="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="contact"><p hidden><label>Laat leeg <input name="bot-field"></label></p>
+        <div class="field"><label for="f-name"><span data-i18n="f.name"></span> <b>*</b></label><input id="f-name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="f-mail"><span data-i18n="f.mail"></span> <b>*</b></label><input id="f-mail" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="f-tel" data-i18n="f.tel"></label><input id="f-tel" name="tel" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="f-date" data-i18n="f.date"></label><input id="f-date" name="date" type="date"></div>
+        <div class="field full"><label for="f-subj"><span data-i18n="f.subj"></span> <b>*</b></label>
+          <select id="f-subj" name="subject" required>
+            <option value="backdrop">Hartvorm Backdrop · €445</option>
+            <option value="xl">Hartvorm Backdrop XL · €495</option>
+            <option value="trio">Hartvorm Backdrop Trio · €645</option>
+            <option value="custom" data-i18n="f.custom"></option>
+            <option value="letters" data-i18n="f.letters"></option>
+            <option value="other" data-i18n="f.other"></option>
+          </select>
+        </div>
+        <div class="field full"><label for="f-msg"><span data-i18n="f.msg"></span> <b>*</b></label><textarea id="f-msg" name="msg" required data-i18n-ph="f.ph"></textarea></div>
+        <button class="btn btn-gold" type="submit" data-i18n="f.send"></button>
+        <p class="ok" id="ok" hidden></p>
+      </form>
+      <aside class="info">
+        <h3 data-i18n="co.direct"></h3>
+        <a class="cline" href="https://wa.me/31628505797" target="_blank" rel="noopener"><span class="ci"><svg class="ico"><use href="#i-wa"/></svg></span><span><small>WhatsApp</small><strong data-i18n="co.wa"></strong></span></a>
+        <a class="cline" href="tel:+31628505797"><span class="ci"><svg class="ico"><use href="#i-tel"/></svg></span><span><small data-i18n="co.call"></small><strong>+31 6 28505797</strong></span></a>
+        <a class="cline" href="mailto:info@marrymeproposal.nl"><span class="ci"><svg class="ico"><use href="#i-mail"/></svg></span><span><small data-i18n="co.mail"></small><strong>info@marrymeproposal.nl</strong></span></a>
+        <a class="cline" href="https://www.instagram.com/marrymeproposal.nl/" target="_blank" rel="noopener"><span class="ci"><svg class="ico"><use href="#i-ig"/></svg></span><span><small>Instagram</small><strong>@marrymeproposal.nl</strong></span></a>
+        <p class="hours" data-i18n="co.hours"></p>
+      </aside>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer>
+  <div class="foot-ask">
+    <div class="wrap">
+      <h2 data-i18n-html="ft.ask"></h2>
+      <div class="actions">
+        <a class="btn btn-gold" href="https://wa.me/31628505797" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>WhatsApp</a>
+        <button class="btn btn-line" data-go="contact" data-i18n="ft.form"></button>
+      </div>
+    </div>
+  </div>
+  <div class="wrap foot-grid">
+    <div>
+      <img src="img/logo.png" alt="MarryMe Proposal">
+      <p data-i18n="ft.about"></p>
+      <div class="socials">
+        <a href="https://www.instagram.com/marrymeproposal.nl/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico"><use href="#i-ig"/></svg></a>
+        <a href="https://wa.me/31628505797" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4 data-i18n="ft.contact"></h4>
+      <a href="mailto:info@marrymeproposal.nl">info@marrymeproposal.nl</a>
+      <a href="tel:+31628505797">+31 6 28505797</a>
+      <p data-i18n="ft.hours"></p>
+    </div>
+    <div>
+      <h4 data-i18n="ft.menu"></h4>
+      <button data-go="over" data-i18n="nav.about"></button>
+      <button data-go="pakketten" data-i18n="nav.packages"></button>
+      <button data-go="galerij" data-cat="kas" data-i18n="nav.gallery"></button>
+      <button data-go="faq" data-i18n="nav.faq"></button>
+      <button data-go="contact" data-i18n="nav.contact"></button>
+    </div>
+    <div>
+      <h4 data-i18n="ft.area"></h4>
+      <p data-i18n="ft.nl"></p><p data-i18n="ft.be"></p><p data-i18n="ft.lu"></p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div class="wrap">
+      <span>© 2026 MarryMe Proposal · <span data-i18n="ft.tag"></span></span>
+      <span class="credit"><span data-i18n="ft.credit"></span> <b>BMK Agency</b></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" id="wa-float" href="https://wa.me/31628505797" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<div class="lightbox" id="lb" hidden role="dialog" aria-modal="true">
+  <img id="lb-img" alt="" hidden>
+  <video id="lb-vid" controls playsinline hidden></video>
+  <p class="lb-cap" id="lb-cap"></p>
+  <button class="lb-close" id="lb-close" aria-label="Sluiten">✕</button>
+  <button class="lb-prev" id="lb-prev" aria-label="‹">‹</button>
+  <button class="lb-next" id="lb-next" aria-label="›">›</button>
+</div>
+
+<script>
+/* ================= DATA ================= */
+const NEON = ["Wil je met me trouwen?", "Will you marry me?", "Willst du mich heiraten?", "Veux-tu m'épouser ?", "Benimle evlenir misin?"];
+
+const CATS = [
+  { id: "kas", cover: "kas-17" },
+  { id: "skyline", cover: "skyline-76" },
+  { id: "kasteel", cover: "kasteel-64" },
+  { id: "buiten", cover: "buiten-46" },
+  { id: "details", cover: "details-85" }
+];
+const MEDIA = [
+  { id: "kasring", cat: "kas", v: 1 },
+  { id: "hearts", cat: "kas", v: 1 },
+  { id: "piano", cat: "kas", v: 1 },
+  { id: "kas-17", cat: "kas" },
+  { id: "kas-23", cat: "kas" },
+  { id: "kas-27", cat: "kas" },
+  { id: "kas-28", cat: "kas" },
+  { id: "kas-33", cat: "kas" },
+  { id: "kas-35", cat: "kas" },
+  { id: "kas-37", cat: "kas" },
+  { id: "kas-39", cat: "kas" },
+  { id: "kas-11", cat: "kas" },
+  { id: "kas-49", cat: "kas" },
+  { id: "kas-65", cat: "kas" },
+  { id: "kas-62", cat: "kas" },
+  { id: "kas-img_1566", cat: "kas" },
+  { id: "kas-img_1173", cat: "kas" },
+  { id: "kas-img_4157", cat: "kas" },
+  { id: "kas-img_3200", cat: "kas" },
+  { id: "kas-img_1711", cat: "kas" },
+  { id: "rotterdam", cat: "skyline", v: 1 },
+  { id: "bridge", cat: "skyline", v: 1 },
+  { id: "skyline-76", cat: "skyline" },
+  { id: "skyline-73", cat: "skyline" },
+  { id: "skyline-77", cat: "skyline" },
+  { id: "skyline-54", cat: "skyline" },
+  { id: "skyline-60", cat: "skyline" },
+  { id: "skyline-25", cat: "skyline" },
+  { id: "skyline-img_0991", cat: "skyline" },
+  { id: "skyline-img_0440", cat: "skyline" },
+  { id: "skyline-img_4073", cat: "skyline" },
+  { id: "castle", cat: "kasteel", v: 1 },
+  { id: "church", cat: "kasteel", v: 1 },
+  { id: "kasteel-59", cat: "kasteel" },
+  { id: "kasteel-64", cat: "kasteel" },
+  { id: "kasteel-63", cat: "kasteel" },
+  { id: "kasteel-0", cat: "kasteel" },
+  { id: "kasteel-img_0852", cat: "kasteel" },
+  { id: "kasteel-79", cat: "kasteel" },
+  { id: "kasteel-61", cat: "kasteel" },
+  { id: "beach", cat: "buiten", v: 1 },
+  { id: "heli", cat: "buiten", v: 1 },
+  { id: "lake", cat: "buiten", v: 1 },
+  { id: "buiten-46", cat: "buiten" },
+  { id: "buiten-40", cat: "buiten" },
+  { id: "buiten-42", cat: "buiten" },
+  { id: "buiten-43", cat: "buiten" },
+  { id: "buiten-19", cat: "buiten" },
+  { id: "buiten-img_3507", cat: "buiten" },
+  { id: "details-85", cat: "details" },
+  { id: "details-41", cat: "details" },
+  { id: "details-30", cat: "details" },
+  { id: "details-24", cat: "details" },
+  { id: "details-68", cat: "details" },
+  { id: "details-57", cat: "details" },
+  { id: "details-67", cat: "details" },
+  { id: "details-53", cat: "details" },
+  { id: "details-66", cat: "details" },
+  { id: "details-15", cat: "details" },
+  { id: "details-44", cat: "details" },
+  { id: "details-img_0756", cat: "details" },
+  { id: "details-img_1922", cat: "details" }
+];
+
+const PKG = [
+  { id: "backdrop", name: "Hartvorm Backdrop", price: "445", imgs: ["kas-img_1173", "kas-37", "kasteel-79", "kas-23", "kas-35"], items: {
+    nl: ["Bloemenhart als backdrop", "Neonbord", "Loper van 5 meter", "Rozenblaadjes en bloemdecoratie", "Kaarslicht", "Kandelaars en zuilen met decoratie", "Bluetooth-speaker", "Stroomvoorziening", "Opbouw en afbouw"],
+    en: ["Flower heart backdrop", "Neon sign", "5-metre aisle runner", "Rose petals and floral decoration", "Candlelight", "Candelabras and pillars with decoration", "Bluetooth speaker", "Power supply", "Setup and breakdown"],
+    de: ["Blumenherz als Backdrop", "Neonschild", "5-Meter-Läufer", "Rosenblätter und Blumendeko", "Kerzenlicht", "Kandelaber und Säulen mit Deko", "Bluetooth-Lautsprecher", "Stromversorgung", "Auf- und Abbau"] } },
+  { id: "xl", name: "Hartvorm Backdrop XL", price: "495", imgs: ["kas-img_1566", "kas-img_3200", "kas-33", "skyline-60", "details-41"], items: {
+    nl: ["Alles uit Hartvorm Backdrop", "+ Uitgebreid kaarslicht", "+ Persoonlijk welkomstbord"],
+    en: ["Everything in Heart Backdrop", "+ Extended candlelight", "+ Personal welcome sign"],
+    de: ["Alles aus Herz-Backdrop", "+ Erweitertes Kerzenlicht", "+ Persönliches Willkommensschild"] } },
+  { id: "trio", name: "Hartvorm Backdrop Trio", price: "645", imgs: ["kas-img_4157", "kas-49", "skyline-25", "skyline-img_0991", "kas-11"], items: {
+    nl: ["Alles uit Hartvorm Backdrop XL", "+ Drie bloemenharten als ensemble", "+ Sparkulars (koude vonkenfonteinen)"],
+    en: ["Everything in Heart Backdrop XL", "+ Three flower hearts as an ensemble", "+ Sparkulars (cold spark fountains)"],
+    de: ["Alles aus Herz-Backdrop XL", "+ Drei Blumenherzen als Ensemble", "+ Sparkulars (kalte Funkenfontänen)"] } }
+];
+const EX_DECO = [
+  { p: "€80", t: { nl: "LOVE-lichtletters", en: "LOVE light letters", de: "LOVE-Leuchtbuchstaben" } },
+  { p: "€25", t: { nl: "Welkomstbord", en: "Welcome sign", de: "Willkommensschild" } },
+  { p: "€45", t: { nl: "Echte rozenblaadjes", en: "Real rose petals", de: "Echte Rosenblätter" } },
+  { p: "€50", t: { nl: "Gordijnverlichting", en: "Curtain lights", de: "Lichtervorhang" }, n: { nl: "Afhankelijk van de locatie", en: "Depending on the venue", de: "Abhängig von der Location" } },
+  { p: "€95", t: { nl: "Tafel en stoelen met taart en drankjes", en: "Table and chairs with cake and drinks", de: "Tisch und Stühle mit Torte und Getränken" } },
+  { p: "€50", t: { nl: "Extra loper van 5 meter met decoratie", en: "Extra 5-metre runner with decoration", de: "Zusätzlicher 5-Meter-Läufer mit Deko" } },
+  { p: "€10", t: { nl: "Rookfakkel", en: "Smoke flare", de: "Rauchfackel" }, n: { nl: "Per stuk", en: "Each", de: "Pro Stück" } },
+  { p: "€10", t: { nl: "Sparkular", en: "Sparkular", de: "Sparkular" }, n: { nl: "Per stuk", en: "Each", de: "Pro Stück" } },
+  { p: "€115", t: { nl: "Boeket van 50 rozen", en: "Bouquet of 50 roses", de: "Strauß mit 50 Rosen" } },
+  { p: "€210", t: { nl: "Boeket van 100 rozen", en: "Bouquet of 100 roses", de: "Strauß mit 100 Rosen" } }
+];
+const EX_MEDIA = [
+  { p: "€250", t: { nl: "Fotografie", en: "Photography", de: "Fotografie" } },
+  { p: "€350–400", t: { nl: "Fotografie, film en aftermovie", en: "Photography, film and aftermovie", de: "Fotografie, Film und Aftermovie" } },
+  { p: { nl: "Op aanvraag", en: "On request", de: "Auf Anfrage" }, t: { nl: "Violist", en: "Violinist", de: "Geiger" } },
+  { p: { nl: "Op aanvraag", en: "On request", de: "Auf Anfrage" }, t: { nl: "Pianist", en: "Pianist", de: "Pianist" } }
+];
+const EX_LETTERS = [
+  { p: "€120", t: { nl: "BOY & GIRL-lichtletters", en: "BOY & GIRL light letters", de: "BOY & GIRL-Leuchtbuchstaben" } },
+  { p: "€50", t: { nl: "Lichtcijfers", en: "Light-up numbers", de: "Leuchtziffern" }, n: { nl: "Per cijfer", en: "Per number", de: "Pro Ziffer" } }
+];
+
+const FAQ = {
+ "nl": [
+  {
+   "g": "Prijzen en pakketten",
+   "q": [
+    [
+     "Wat kost een huwelijksaanzoek gemiddeld?",
+     "Onze buitenpakketten variëren doorgaans tussen €495 en €645, exclusief reiskosten. Dit is inclusief styling, volledige op- en afbouw en een Bluetoothspeaker voor muziek tijdens het aanzoek. De uiteindelijke prijs is afhankelijk van jouw wensen, locatie en eventuele extra's."
+    ],
+    [
+     "Wat kost een binnenlocatie gemiddeld?",
+     "Voor een binnenlocatie moet je naast het gekozen pakket rekening houden met gemiddeld €200 tot €500 aan locatiekosten. We bespreken de kosten uiteraard vooraf met je."
+    ],
+    [
+     "Zijn fotografie en videografie inbegrepen in de standaardprijs?",
+     "Nee, professionele fotografie en videografie zijn niet standaard inbegrepen. Je kunt deze eenvoudig als extra optie toevoegen. Je kunt kiezen voor alleen fotografie of voor een combinatie van fotografie en videografie inclusief een professioneel gemonteerde videoclip."
+    ],
+    [
+     "Kan het huwelijksaanzoek volledig op maat worden gemaakt?",
+     "Absoluut. We beschikken over verschillende soorten decoraties en kunnen de setting zoveel mogelijk aanpassen aan jouw wensen. Heb je zelf een idee, thema, bepaalde kleuren of een specifieke setting in gedachten? Vertel het ons en we kijken samen naar de mogelijkheden."
+    ]
+   ]
+  },
+  {
+   "g": "Locatie en planning",
+   "q": [
+    [
+     "Wie regelt de locatie?",
+     "Dat kunnen wij volledig voor je regelen. We werken samen met verschillende locaties en hebben korte lijnen met onze locatiepartners. Aan de hand van jouw wensen en voorkeursregio zoeken we graag naar een geschikte plek voor het aanzoek."
+    ],
+    [
+     "Mag ik zelf een locatie kiezen?",
+     "Jazeker. Heb je zelf al een mooie locatie in gedachten? Dan kunnen we het aanzoek daar organiseren, mits styling en opbouw op de betreffende locatie zijn toegestaan.<br><br>Het is daarbij belangrijk dat de locatie goed bereikbaar is en we onze decoratiematerialen ter plaatse kunnen uitladen. Voor de opbouw nemen we namelijk verschillende materialen mee, waardoor het niet altijd mogelijk is om grote afstanden vanaf een parkeerplaats naar de locatie te lopen.<br><br>Twijfel je of jouw gekozen locatie geschikt is? Stuur ons gerust de locatie door. Wij kijken graag met je mee en kunnen indien nodig rechtstreeks contact opnemen met de locatie om de mogelijkheden af te stemmen."
+    ],
+    [
+     "Wat gebeurt er als het slecht weer is?",
+     "Bij een buitenaanzoek houden we de weersverwachting goed in de gaten. Wanneer de omstandigheden niet geschikt zijn voor het geplande aanzoek, bespreken we samen de mogelijkheden. Afhankelijk van de situatie kunnen we bijvoorbeeld kijken naar een ander tijdstip, een alternatieve locatie of een nieuwe datum."
+    ]
+   ]
+  },
+  {
+   "g": "Foto, video en extra's",
+   "q": [
+    [
+     "Hoe snel ontvangen we de foto's en video's?",
+     "De levertijd is gemiddeld 1 tot 2 weken. We informeren je vooraf over de verwachte levertijd, zodat je precies weet wanneer je de beelden kunt verwachten."
+    ],
+    [
+     "Mag ik mijn eigen fotograaf of videograaf meenemen?",
+     "Natuurlijk. Je bent volledig vrij om je eigen fotograaf of videograaf mee te nemen. Wij stemmen de planning graag met je af, zodat jouw fotograaf of videograaf op het juiste moment klaarstaat en alles soepel verloopt."
+    ],
+    [
+     "Kunnen jullie ook voor een mooi boeket rozen zorgen?",
+     "Zeker! Wij werken al enige tijd samen met een gespecialiseerde bloemenzaak die ervaring heeft met het maken van bijzondere boeketten speciaal voor huwelijksaanzoeken. Het boeket kan volledig naar wens worden samengesteld, bijvoorbeeld met een persoonlijk lint of tekst op de rozen. Zo maken we ook dit onderdeel helemaal passend bij jullie bijzondere moment, en nemen wij het mee naar het aanzoek."
+    ]
+   ]
+  }
+ ],
+ "en": [
+  {
+   "g": "Prices and packages",
+   "q": [
+    [
+     "What does a marriage proposal cost on average?",
+     "Our outdoor packages usually range from €495 to €645, excluding travel costs. This includes styling, full setup and breakdown, and a Bluetooth speaker for music during the proposal. The final price depends on your wishes, the location and any extras."
+    ],
+    [
+     "What does an indoor venue cost on average?",
+     "For an indoor venue, allow for an average of €200 to €500 in venue costs on top of your chosen package. We will of course discuss the costs with you in advance."
+    ],
+    [
+     "Are photography and videography included in the standard price?",
+     "No, professional photography and videography are not included as standard. You can easily add them as an extra. Choose photography only, or a combination of photography and videography including a professionally edited video clip."
+    ],
+    [
+     "Can the proposal be fully tailor-made?",
+     "Absolutely. We have many kinds of decoration and can adapt the setting to your wishes as far as possible. Do you have an idea, theme, colours or a specific setting in mind? Tell us and we will explore the options together."
+    ]
+   ]
+  },
+  {
+   "g": "Venue and planning",
+   "q": [
+    [
+     "Who arranges the venue?",
+     "We can arrange it entirely for you. We work with a range of venues and have short lines with our venue partners. Based on your wishes and preferred region, we will gladly find a suitable place for the proposal."
+    ],
+    [
+     "Can I choose a venue myself?",
+     "Of course. Already have a beautiful place in mind? Then we can organise the proposal there, provided styling and setup are allowed at that venue.<br><br>It is important that the venue is easy to reach and that we can unload our decoration on site. We bring a lot of materials for the setup, so it is not always possible to carry everything a long way from a car park.<br><br>Not sure if your venue is suitable? Send it to us. We are happy to take a look and, if needed, contact the venue directly to discuss the options."
+    ],
+    [
+     "What happens if the weather is bad?",
+     "For an outdoor proposal we keep a close eye on the forecast. If conditions are not suitable for the planned proposal, we discuss the options together, such as a different time, an alternative venue or a new date."
+    ]
+   ]
+  },
+  {
+   "g": "Photo, video and extras",
+   "q": [
+    [
+     "How soon will we receive the photos and videos?",
+     "Delivery takes 1 to 2 weeks on average. We let you know the expected delivery time in advance, so you know exactly when to expect the footage."
+    ],
+    [
+     "Can I bring my own photographer or videographer?",
+     "Of course. You are completely free to bring your own photographer or videographer. We will coordinate the planning with you, so they are ready at the right moment and everything runs smoothly."
+    ],
+    [
+     "Can you also provide a beautiful bouquet of roses?",
+     "Certainly! We have worked for some time with a specialist florist experienced in creating special bouquets for marriage proposals. The bouquet can be fully tailored, for example with a personal ribbon or text on the roses. That way this part fits your special moment perfectly too, and we bring it along to the proposal."
+    ]
+   ]
+  }
+ ],
+ "de": [
+  {
+   "g": "Preise und Pakete",
+   "q": [
+    [
+     "Was kostet ein Heiratsantrag durchschnittlich?",
+     "Unsere Outdoor-Pakete liegen in der Regel zwischen €495 und €645, zuzüglich Anfahrtskosten. Enthalten sind Styling, kompletter Auf- und Abbau sowie ein Bluetooth-Lautsprecher für Musik während des Antrags. Der endgültige Preis hängt von deinen Wünschen, der Location und eventuellen Extras ab."
+    ],
+    [
+     "Was kostet eine Indoor-Location durchschnittlich?",
+     "Für eine Indoor-Location solltest du zusätzlich zum gewählten Paket mit durchschnittlich €200 bis €500 Locationkosten rechnen. Die Kosten besprechen wir selbstverständlich vorab mit dir."
+    ],
+    [
+     "Sind Fotografie und Videografie im Standardpreis enthalten?",
+     "Nein, professionelle Fotografie und Videografie sind nicht standardmäßig enthalten. Du kannst sie ganz einfach als Extra hinzubuchen: nur Fotografie oder eine Kombination aus Fotografie und Videografie inklusive professionell geschnittenem Videoclip."
+    ],
+    [
+     "Kann der Antrag komplett individuell gestaltet werden?",
+     "Absolut. Wir verfügen über verschiedenste Dekorationen und passen das Setting so weit wie möglich an deine Wünsche an. Hast du eine Idee, ein Thema, bestimmte Farben oder ein besonderes Setting im Kopf? Erzähl es uns und wir schauen gemeinsam, was möglich ist."
+    ]
+   ]
+  },
+  {
+   "g": "Location und Planung",
+   "q": [
+    [
+     "Wer organisiert die Location?",
+     "Das können wir komplett für dich übernehmen. Wir arbeiten mit verschiedenen Locations zusammen und haben kurze Wege zu unseren Partnern. Anhand deiner Wünsche und Wunschregion suchen wir gern einen passenden Ort für den Antrag."
+    ],
+    [
+     "Darf ich die Location selbst wählen?",
+     "Natürlich. Hast du schon einen schönen Ort im Kopf? Dann organisieren wir den Antrag dort, sofern Styling und Aufbau an der Location erlaubt sind.<br><br>Wichtig ist, dass die Location gut erreichbar ist und wir unsere Deko vor Ort ausladen können. Wir bringen viel Material mit, daher ist es nicht immer möglich, weite Strecken vom Parkplatz zu laufen.<br><br>Unsicher, ob deine Location geeignet ist? Schick sie uns gern. Wir schauen sie uns an und nehmen bei Bedarf direkt Kontakt mit der Location auf."
+    ],
+    [
+     "Was passiert bei schlechtem Wetter?",
+     "Bei einem Antrag im Freien behalten wir die Wettervorhersage genau im Blick. Sind die Bedingungen nicht geeignet, besprechen wir gemeinsam die Möglichkeiten, zum Beispiel eine andere Uhrzeit, eine alternative Location oder einen neuen Termin."
+    ]
+   ]
+  },
+  {
+   "g": "Foto, Video und Extras",
+   "q": [
+    [
+     "Wie schnell erhalten wir die Fotos und Videos?",
+     "Die Lieferzeit beträgt durchschnittlich 1 bis 2 Wochen. Wir informieren dich vorab über die voraussichtliche Lieferzeit, damit du genau weißt, wann du die Aufnahmen erwarten kannst."
+    ],
+    [
+     "Darf ich meinen eigenen Fotografen oder Videografen mitbringen?",
+     "Natürlich. Du kannst gern deinen eigenen Fotografen oder Videografen mitbringen. Wir stimmen die Planung mit dir ab, damit er im richtigen Moment bereitsteht und alles reibungslos läuft."
+    ],
+    [
+     "Könnt ihr auch einen schönen Rosenstrauß besorgen?",
+     "Sicher! Wir arbeiten seit einiger Zeit mit einem spezialisierten Blumengeschäft zusammen, das Erfahrung mit besonderen Sträußen für Heiratsanträge hat. Der Strauß kann ganz nach Wunsch gestaltet werden, zum Beispiel mit einem persönlichen Band oder Text auf den Rosen. So passt auch dieser Teil perfekt zu eurem Moment, und wir bringen ihn zum Antrag mit."
+    ]
+   ]
+  }
+ ]
+};
+
+const T = {
+  nl: {
+    "nav.home":"Home","nav.about":"Over ons","nav.packages":"Pakketten","nav.gallery":"Galerij","nav.faq":"Veelgestelde vragen","nav.contact":"Contact","nav.close":"Sluiten",
+    "hero.eyebrow":"Huwelijksaanzoeken in de Benelux",
+    "hero.title":"Wij ontwerpen het moment. <em>Jij stelt de vraag.</em>",
+    "hero.pause":"Film pauzeren","hero.play":"Film afspelen",
+    "fact.1":"Nederland · België · Luxemburg","fact.2":"Rood of wit","fact.3":"Volledig verzorgd",
+    "cta.plan":"Plan een kennismaking","cta.gallery":"Bekijk ons werk","cta.packages":"Bekijk de pakketten",
+    "cta.eyebrow":"Klaar voor de vraag","cta.title":"Zullen we <em>jullie moment</em> plannen?",
+    "in.title":"Een aanzoek dat klopt, <em>tot in het kleinste detail</em>",
+    "in.text":"Wij ontwerpen, bouwen en verzorgen huwelijksaanzoeken: van bloemenharten en kaarslicht tot live muziek en professionele fotografie. Jij hoeft alleen nog de vraag te stellen.",
+    "svc.1.t":"Decor en styling","svc.1.d":"Bloemenharten in rood of wit, kaarslicht, rozenblaadjes en een neonbord.",
+    "svc.2.t":"Fotografie en film","svc.2.d":"Een fotograaf en videograaf die het moment onopvallend vastleggen.",
+    "svc.3.t":"Live muziek","svc.3.d":"Een violist of pianist die speelt op het moment dat het ertoe doet.",
+    "svc.4.t":"Volledig verzorgd","svc.4.d":"Wij bouwen op, blijven uit het zicht en ruimen na afloop alles op.",
+    "gt.eyebrow":"Galerij","gt.title":"Kies jullie <em>setting</em>","gt.sub":"Van een glazen kas tot een monumentale zaal of een rooftop boven de stad.","gt.all":"Volledige galerij","gt.items":"{n} foto's en films",
+    "cat.all":"Alles","cat.skyline":"Skyline en rooftop","cat.kas":"Glazen kas","cat.monument":"Monumentaal en kasteel","cat.details":"Details en ringen","cat.films":"Films",
+    "ab.eyebrow":"Over ons","ab.title":"Uit passie begonnen, <em>met vakmanschap gegroeid</em>","ab.since":"Sinds",
+    "ab.teaser":"Wat jarenlang een passie naast ons werk was, werd in 2023 ons vak. Sindsdien verzorgen we aanzoeken in heel de Benelux, samen met een vast netwerk van fotografen, videografen en muzikanten.",
+    "ab.more":"Lees ons verhaal",
+    "rev.eyebrow":"Ervaringen","rev.title":"Zij zeiden ja. <em>En dit zeiden ze over ons.</em>","rev.1":"Klant uit Nederland","rev.2":"Klant uit het buitenland","rev.more":"Meer aanzoeken en reacties vind je op Instagram:",
+    "about.eyebrow":"Over ons","about.title":"Uit liefde voor <em>het moment</em>",
+    "about.lead":"Wat begon als passie naast ons werk, is uitgegroeid tot een vak. Vandaag verzorgen we huwelijksaanzoeken in heel de Benelux.",
+    "about.story":"Ons verhaal","about.storyt":"Van enkele aanzoeken per jaar <em>tot ons vak</em>",
+    "about.s1.y":"Jarenlang","about.s1.t":"Een passie naast ons werk","about.s1.d":"Jarenlang organiseerden we enkele aanzoeken per jaar voor vrienden, familie en bekenden. Elke keer opnieuw zagen we wat zo'n moment met mensen doet.",
+    "about.s2.t":"De stap naar professioneel","about.s2.d":"In 2023 besloten we er volledig voor te gaan. We breidden onze collectie decor uit en bouwden een vast netwerk op van fotografen, videografen, violisten en pianisten.",
+    "about.s3.y":"Vandaag","about.s3.t":"Door heel de Benelux","about.s3.d":"Inmiddels verzorgen we aanzoeken in Nederland, België en Luxemburg: in een glazen kas, een monumentale zaal of op een rooftop boven de stad.",
+    "about.v.eyebrow":"Onze werkwijze","about.v.title":"Waar je <em>op kunt rekenen</em>",
+    "about.v1.t":"Eén aanspreekpunt","about.v1.d":"Van het eerste bericht tot het moment zelf heb je contact met dezelfde persoon.",
+    "about.v2.t":"Oog voor detail","about.v2.d":"Elke kaars, elk bloemblad en elke letter krijgt een vaste plek in het ontwerp.",
+    "about.v3.t":"Volledige discretie","about.v3.d":"Wij werken op de achtergrond. Je partner merkt niets tot het moment daar is.",
+    "about.cta":"Zullen we <em>jullie moment</em> samen plannen?",
+    "pr.eyebrow":"Pakketten","pr.title":"Drie pakketten, <em>volledig verzorgd</em>","pr.sub":"Elk pakket is verkrijgbaar in rood of wit. Opbouw, styling en afbouw zijn altijd inbegrepen.",
+    "pr.choose":"Vraag dit pakket aan","pr.colors":"Rood of wit","pr.incl":"Inbegrepen","pr.photos":"foto's",
+    "pr.d.backdrop":"Eén bloemenhart als middelpunt. Klassiek, ingetogen en compleet.",
+    "pr.d.xl":"Het klassieke hart, aangevuld met extra kaarslicht en een persoonlijk welkomstbord.",
+    "pr.d.trio":"Drie bloemenharten als ensemble, met sparkulars voor een onvergetelijke entree.",
+    "pr.own.t":"Een aanzoek op maat","pr.own.d":"Liever iets anders? Combineer een pakket met losse extra's of deel je eigen idee. Wij werken het uit tot een voorstel op maat.","pr.own.cta":"Bespreek je idee",
+    "ex.eyebrow":"Extra's","ex.title":"Maak het <em>compleet</em>","ex.sub":"Elke extra is te combineren met ieder pakket.",
+    "ex.h.deco":"Decor en bloemen","ex.h.media":"Fotografie, film en muziek","ex.h.letters":"Lichtletters (verhuur)",
+    "ex.letters.note":"Hoogte circa 1 meter, huurperiode 48 uur.",
+    "how.eyebrow":"Werkwijze","how.title":"Zo verloopt <em>een aanzoek</em>",
+    "how.1.t":"Kennismaking","how.1.d":"Je vertelt ons over jullie verhaal, de gewenste datum en je wensen voor de locatie.",
+    "how.2.t":"Ontwerp","how.2.d":"Wij stellen een voorstel op met pakket, kleur, locatie en eventuele extra's.",
+    "how.3.t":"Opbouw","how.3.d":"Op de dag zelf richten wij de locatie in. Fotograaf en muzikant staan klaar, uit het zicht.",
+    "how.4.t":"Het moment","how.4.d":"Jij stelt de vraag. Daarna ruimen wij alles op; de foto's en film blijven.",
+    "ga.eyebrow":"Galerij","ga.title":"Ons werk, <em>per setting</em>","ga.sub":"Kies een setting en open een foto of film voor de volledige weergave.","ga.film":"Film","ga.count":"{n} foto's en films",
+    "faq.eyebrow":"Veelgestelde vragen","faq.title":"Veelgestelde <em>vragen</em>","faq.sub":"Over prijzen, locaties, planning, fotografie en extra's.",
+    "faq.more.t":"Nog <em>een vraag?</em>","faq.more.d":"Staat jouw vraag er niet tussen? Geen probleem. Bel of WhatsApp ons gerust. We denken graag met je mee over de locatie, styling en alle mogelijkheden om jouw aanzoek precies zo te maken als jij het voor ogen hebt.","ui.swipe":"Swipe voor meer →","ft.credit":"Website door",
+    "co.eyebrow":"Contact","co.title":"Plan een <em>kennismaking</em>","co.sub":"Vertel ons over jullie plannen. Je ontvangt zo snel mogelijk een persoonlijk voorstel.",
+    "f.name":"Naam","f.mail":"E-mail","f.tel":"Telefoon","f.date":"Gewenste datum","f.subj":"Onderwerp","f.custom":"Aanzoek op maat","f.letters":"Lichtletters huren","f.other":"Overige vraag",
+    "f.msg":"Bericht","f.send":"Verstuur bericht","f.ph":"Vertel ons over de datum, de locatie en wat je voor ogen hebt.",
+    "f.fail":"Het versturen is niet gelukt. Probeer het opnieuw of stuur ons een WhatsApp.","f.err":"Vul je naam, een geldig e-mailadres en een bericht in.",
+    "f.ok":"Dank je, {n}. We hebben je bericht ontvangen en nemen zo snel mogelijk contact met je op.",
+    "co.direct":"Direct contact","co.wa":"Stuur een bericht","co.call":"Telefoon","co.mail":"E-mail","co.hours":"Dagelijks bereikbaar van 10:00 tot 22:00",
+    "ft.ask":"Een vraag of een idee? <em>Wij denken graag mee.</em>","ft.form":"Contactformulier",
+    "ft.about":"Huwelijksaanzoeken in Nederland, België en Luxemburg. Ontworpen, opgebouwd en vastgelegd door ons team.",
+    "ft.contact":"Contact","ft.hours":"Dagelijks 10:00–22:00","ft.menu":"Menu","ft.area":"Werkgebied","ft.nl":"Nederland","ft.be":"België","ft.lu":"Luxemburg",
+    "ft.tag":"Styling · Bloemen · Muziek · Fotografie",
+    "cat.kas":"Glazen kas","cat.skyline":"Skyline en rooftop","cat.kasteel":"Kasteel en paleis","cat.buiten":"Tropisch en buiten","cat.details":"Rozen en details","cat.films":"Films","film.kasring":"De ring, in de glazen kas","film.hearts":"Witte harten met initialen","film.piano":"Live piano en rode rozen","film.rotterdam":"Rotterdam, rode harten aan de Maas","film.bridge":"Zonsondergang, met familie","film.castle":"Kasteelzaal met live violist","film.church":"Rood decor in een oude kerk","film.beach":"Strandaanzoek vanuit de lucht","film.heli":"Per helikopter naar het ja","film.lake":"LOVE-letters aan het water","tm.eyebrow":"Ons team","tm.title":"De mensen <em>achter het moment</em>","tm.sub":"Wij werken met een vast team van fotografen, videografen en muzikanten die we kennen en vertrouwen.","tm.lead":"Vaste fotograaf en videograaf","tm.leadd":"Emir legt al onze grote momenten vast, van de eerste kaars tot het ja. Bijna elke film op deze site is van zijn hand.","tm.photo":"Foto en video","tm.violin":"Violist","tm.violin.f":"Violiste","tm.piano.f":"Pianiste","tm.music":"Muziek en violisten","rv.all.eyebrow":"Ervaringen","rv.all.title":"Wat stellen <em>ons stuurden</em>","rv.nl":"Klant uit Nederland","rv.abroad":"Klant uit het buitenland","rv.fam":"Namens de hele familie",
+    "cap.loft-proposal":"Monumentale zaal","cap.greenhouse-candles":"Glazen kas bij kaarslicht","cap.ring-hands":"De ring","cap.red-hearts":"Rode rozen, Turkse neontekst","cap.rooftop-river":"Rooftop aan het water","cap.heart-arch":"Bloemenhart in wit","cap.castle":"Kasteel bij avond","cap.ring-white":"Het ja-woord","cap.greenhouse-couple":"Hand in hand","cap.rotterdam":"Rotterdam, Erasmusbrug","cap.greenhouse-aisle":"Will you marry me?","cap.ring-black":"Het detail",
+    "cap.amsterdam-violin":"Rode harten met live violist","cap.amsterdam-hearts":"Aanzoek boven het IJ","cap.greenhouse-drone":"Glazen kas vanuit de lucht","cap.loft-violin":"Bloemenhart met violist","cap.hands":"Net verloofd"
+  },
+  en: {
+    "nav.home":"Home","nav.about":"About us","nav.packages":"Packages","nav.gallery":"Gallery","nav.faq":"FAQ","nav.contact":"Contact","nav.close":"Close",
+    "hero.eyebrow":"Marriage proposals across the Benelux",
+    "hero.title":"We design the moment. <em>You ask the question.</em>",
+    "hero.pause":"Pause film","hero.play":"Play film",
+    "fact.1":"Netherlands · Belgium · Luxembourg","fact.2":"Red or white","fact.3":"Fully arranged",
+    "cta.plan":"Plan an introduction","cta.gallery":"View our work","cta.packages":"View the packages",
+    "cta.eyebrow":"Ready for the question","cta.title":"Shall we plan <em>your moment</em>?",
+    "in.title":"A proposal that's right, <em>down to the smallest detail</em>",
+    "in.text":"We design, build and take care of marriage proposals: from flower hearts and candlelight to live music and professional photography. All that's left for you is to ask the question.",
+    "svc.1.t":"Decor and styling","svc.1.d":"Flower hearts in red or white, candlelight, rose petals and a neon sign.",
+    "svc.2.t":"Photography and film","svc.2.d":"A photographer and videographer who capture the moment discreetly.",
+    "svc.3.t":"Live music","svc.3.d":"A violinist or pianist who plays at the moment that matters.",
+    "svc.4.t":"Fully arranged","svc.4.d":"We set up, stay out of sight and clear everything away afterwards.",
+    "gt.eyebrow":"Gallery","gt.title":"Choose your <em>setting</em>","gt.sub":"From a glass greenhouse to a historic hall or a rooftop above the city.","gt.all":"Full gallery","gt.items":"{n} photos and films",
+    "cat.all":"All","cat.skyline":"Skyline and rooftop","cat.kas":"Glass greenhouse","cat.monument":"Historic and castle","cat.details":"Details and rings","cat.films":"Films",
+    "ab.eyebrow":"About us","ab.title":"Born from passion, <em>grown with craft</em>","ab.since":"Since",
+    "ab.teaser":"What was a passion alongside our work for years became our profession in 2023. Since then we've created proposals across the Benelux, together with a trusted network of photographers, videographers and musicians.",
+    "ab.more":"Read our story",
+    "rev.eyebrow":"Experiences","rev.title":"They said yes. <em>And this is what they said about us.</em>","rev.1":"Client from the Netherlands","rev.2":"Client from abroad","rev.more":"Find more proposals and reactions on Instagram:",
+    "about.eyebrow":"About us","about.title":"For the love of <em>the moment</em>",
+    "about.lead":"What began as a passion alongside our work has grown into a profession. Today we create marriage proposals across the Benelux.",
+    "about.story":"Our story","about.storyt":"From a few proposals a year <em>to our profession</em>",
+    "about.s1.y":"For years","about.s1.t":"A passion alongside our work","about.s1.d":"For years we organised a few proposals a year for friends, family and acquaintances. Each time we saw what a moment like that means to people.",
+    "about.s2.t":"Going professional","about.s2.d":"In 2023 we decided to commit fully. We expanded our collection of decor and built a regular network of photographers, videographers, violinists and pianists.",
+    "about.s3.y":"Today","about.s3.t":"Across the Benelux","about.s3.d":"Today we create proposals in the Netherlands, Belgium and Luxembourg: in a glass greenhouse, a historic hall or on a rooftop above the city.",
+    "about.v.eyebrow":"How we work","about.v.title":"What you can <em>count on</em>",
+    "about.v1.t":"One point of contact","about.v1.d":"From the first message to the moment itself, you deal with the same person.",
+    "about.v2.t":"Attention to detail","about.v2.d":"Every candle, every petal and every letter has its place in the design.",
+    "about.v3.t":"Complete discretion","about.v3.d":"We work in the background. Your partner notices nothing until the moment arrives.",
+    "about.cta":"Shall we plan <em>your moment</em> together?",
+    "pr.eyebrow":"Packages","pr.title":"Three packages, <em>fully arranged</em>","pr.sub":"Every package is available in red or white. Setup, styling and breakdown are always included.",
+    "pr.choose":"Request this package","pr.colors":"Red or white","pr.incl":"Included","pr.photos":"photos",
+    "pr.d.backdrop":"One flower heart as the centrepiece. Classic, understated and complete.",
+    "pr.d.xl":"The classic heart, complemented with extra candlelight and a personal welcome sign.",
+    "pr.d.trio":"Three flower hearts as an ensemble, with sparkulars for an unforgettable entrance.",
+    "pr.own.t":"A tailor-made proposal","pr.own.d":"Something different in mind? Combine a package with extras or share your own idea. We'll turn it into a tailored proposal.","pr.own.cta":"Discuss your idea",
+    "ex.eyebrow":"Extras","ex.title":"Complete <em>the picture</em>","ex.sub":"Every extra can be combined with any package.",
+    "ex.h.deco":"Decor and flowers","ex.h.media":"Photography, film and music","ex.h.letters":"Light letters (rental)",
+    "ex.letters.note":"About 1 metre tall, rental period 48 hours.",
+    "how.eyebrow":"How it works","how.title":"How a proposal <em>comes together</em>",
+    "how.1.t":"Introduction","how.1.d":"You tell us your story, your preferred date and your wishes for the venue.",
+    "how.2.t":"Design","how.2.d":"We prepare a proposal with package, colour, venue and any extras.",
+    "how.3.t":"Setup","how.3.d":"On the day we prepare the venue. Photographer and musician are ready, out of sight.",
+    "how.4.t":"The moment","how.4.d":"You ask the question. Afterwards we clear everything away; the photos and film remain.",
+    "ga.eyebrow":"Gallery","ga.title":"Our work, <em>by setting</em>","ga.sub":"Choose a setting and open a photo or film in full view.","ga.film":"Film","ga.count":"{n} photos and films",
+    "faq.eyebrow":"FAQ","faq.title":"Frequently asked <em>questions</em>","faq.sub":"About prices, venues, planning, photography and extras.",
+    "faq.more.t":"Another <em>question?</em>","faq.more.d":"Is your question not listed? No problem. Call or WhatsApp us. We are happy to think along about the venue, styling and every option to make your proposal exactly as you imagine it.","ui.swipe":"Swipe for more →","ft.credit":"Website by",
+    "co.eyebrow":"Contact","co.title":"Plan an <em>introduction</em>","co.sub":"Tell us about your plans. You'll receive a personal proposal as soon as possible.",
+    "f.name":"Name","f.mail":"Email","f.tel":"Phone","f.date":"Preferred date","f.subj":"Subject","f.custom":"Tailor-made proposal","f.letters":"Rent light letters","f.other":"Other question",
+    "f.msg":"Message","f.send":"Send message","f.ph":"Tell us about the date, the venue and what you have in mind.",
+    "f.fail":"Sending failed. Please try again or send us a WhatsApp.","f.err":"Please enter your name, a valid email address and a message.",
+    "f.ok":"Thank you, {n}. We've received your message and will be in touch as soon as possible.",
+    "co.direct":"Direct contact","co.wa":"Send a message","co.call":"Phone","co.mail":"Email","co.hours":"Available daily from 10:00 to 22:00",
+    "ft.ask":"A question or an idea? <em>We're happy to help.</em>","ft.form":"Contact form",
+    "ft.about":"Marriage proposals in the Netherlands, Belgium and Luxembourg. Designed, built and captured by our team.",
+    "ft.contact":"Contact","ft.hours":"Daily 10:00–22:00","ft.menu":"Menu","ft.area":"Service area","ft.nl":"Netherlands","ft.be":"Belgium","ft.lu":"Luxembourg",
+    "ft.tag":"Styling · Flowers · Music · Photography",
+    "cat.kas":"Glass greenhouse","cat.skyline":"Skyline and rooftop","cat.kasteel":"Castle and palace","cat.buiten":"Tropical and outdoor","cat.details":"Roses and details","cat.films":"Films","film.kasring":"The ring, in the glass greenhouse","film.hearts":"White hearts with initials","film.piano":"Live piano and red roses","film.rotterdam":"Rotterdam, red hearts on the Maas","film.bridge":"Sunset, with family","film.castle":"Castle hall with live violinist","film.church":"Red decor in an old church","film.beach":"Beach proposal from above","film.heli":"By helicopter to the yes","film.lake":"LOVE letters by the water","tm.eyebrow":"Our team","tm.title":"The people <em>behind the moment</em>","tm.sub":"We work with a regular team of photographers, videographers and musicians we know and trust.","tm.lead":"Lead photographer and videographer","tm.leadd":"Emir captures all our big moments, from the first candle to the yes. Almost every film on this site is his work.","tm.photo":"Photo and video","tm.violin":"Violinist","tm.violin.f":"Violinist","tm.piano.f":"Pianist","tm.music":"Music and violinists","rv.all.eyebrow":"Experiences","rv.all.title":"What couples <em>sent us</em>","rv.nl":"Client from the Netherlands","rv.abroad":"Client from abroad","rv.fam":"On behalf of the whole family",
+    "cap.loft-proposal":"Historic hall","cap.greenhouse-candles":"Glass greenhouse by candlelight","cap.ring-hands":"The ring","cap.red-hearts":"Red roses, Turkish neon sign","cap.rooftop-river":"Rooftop by the water","cap.heart-arch":"White flower heart","cap.castle":"Castle at night","cap.ring-white":"The yes","cap.greenhouse-couple":"Hand in hand","cap.rotterdam":"Rotterdam, Erasmus Bridge","cap.greenhouse-aisle":"Will you marry me?","cap.ring-black":"The detail",
+    "cap.amsterdam-violin":"Red hearts with a live violinist","cap.amsterdam-hearts":"Proposal above the IJ","cap.greenhouse-drone":"Glass greenhouse from above","cap.loft-violin":"Flower heart with violinist","cap.hands":"Just engaged"
+  },
+  de: {
+    "nav.home":"Start","nav.about":"Über uns","nav.packages":"Pakete","nav.gallery":"Galerie","nav.faq":"Häufige Fragen","nav.contact":"Kontakt","nav.close":"Schließen",
+    "hero.eyebrow":"Heiratsanträge in den Benelux-Ländern",
+    "hero.title":"Wir gestalten den Moment. <em>Du stellst die Frage.</em>",
+    "hero.pause":"Film pausieren","hero.play":"Film abspielen",
+    "fact.1":"Niederlande · Belgien · Luxemburg","fact.2":"Rot oder Weiß","fact.3":"Rundum organisiert",
+    "cta.plan":"Kennenlernen vereinbaren","cta.gallery":"Unsere Arbeit ansehen","cta.packages":"Pakete ansehen",
+    "cta.eyebrow":"Bereit für die Frage","cta.title":"Sollen wir <em>euren Moment</em> planen?",
+    "in.title":"Ein Antrag, der stimmt, <em>bis ins kleinste Detail</em>",
+    "in.text":"Wir gestalten, bauen und organisieren Heiratsanträge: von Blumenherzen und Kerzenlicht bis zu Live-Musik und professioneller Fotografie. Du musst nur noch die Frage stellen.",
+    "svc.1.t":"Deko und Styling","svc.1.d":"Blumenherzen in Rot oder Weiß, Kerzenlicht, Rosenblätter und ein Neonschild.",
+    "svc.2.t":"Fotografie und Film","svc.2.d":"Ein Fotograf und Videograf, die den Moment unauffällig festhalten.",
+    "svc.3.t":"Live-Musik","svc.3.d":"Ein Geiger oder Pianist, der im entscheidenden Moment spielt.",
+    "svc.4.t":"Rundum organisiert","svc.4.d":"Wir bauen auf, bleiben außer Sicht und räumen danach alles weg.",
+    "gt.eyebrow":"Galerie","gt.title":"Wählt euer <em>Setting</em>","gt.sub":"Vom Glashaus über einen historischen Saal bis zur Dachterrasse über der Stadt.","gt.all":"Ganze Galerie","gt.items":"{n} Fotos und Filme",
+    "cat.all":"Alle","cat.skyline":"Skyline und Rooftop","cat.kas":"Glashaus","cat.monument":"Historisch und Schloss","cat.details":"Details und Ringe","cat.films":"Filme",
+    "ab.eyebrow":"Über uns","ab.title":"Aus Leidenschaft begonnen, <em>mit Handwerk gewachsen</em>","ab.since":"Seit",
+    "ab.teaser":"Was jahrelang eine Leidenschaft neben der Arbeit war, wurde 2023 unser Beruf. Seitdem organisieren wir Anträge in den ganzen Benelux-Ländern, mit einem festen Netzwerk aus Fotografen, Videografen und Musikern.",
+    "ab.more":"Unsere Geschichte",
+    "rev.eyebrow":"Erfahrungen","rev.title":"Sie sagten Ja. <em>Und das sagten sie über uns.</em>","rev.1":"Kunde aus den Niederlanden","rev.2":"Kunde aus dem Ausland","rev.more":"Weitere Anträge und Reaktionen findest du auf Instagram:",
+    "about.eyebrow":"Über uns","about.title":"Aus Liebe zum <em>Moment</em>",
+    "about.lead":"Was als Leidenschaft neben der Arbeit begann, ist zu einem Beruf geworden. Heute organisieren wir Heiratsanträge in den ganzen Benelux-Ländern.",
+    "about.story":"Unsere Geschichte","about.storyt":"Von einigen Anträgen im Jahr <em>zum Beruf</em>",
+    "about.s1.y":"Jahrelang","about.s1.t":"Eine Leidenschaft neben der Arbeit","about.s1.d":"Jahrelang haben wir einige Anträge im Jahr für Freunde, Familie und Bekannte organisiert. Jedes Mal sahen wir, was so ein Moment für Menschen bedeutet.",
+    "about.s2.t":"Der Schritt zum Profi","about.s2.d":"2023 haben wir beschlossen, voll durchzustarten. Wir haben unsere Deko-Kollektion erweitert und ein festes Netzwerk aus Fotografen, Videografen, Geigern und Pianisten aufgebaut.",
+    "about.s3.y":"Heute","about.s3.t":"In den ganzen Benelux-Ländern","about.s3.d":"Heute organisieren wir Anträge in den Niederlanden, Belgien und Luxemburg: im Glashaus, in einem historischen Saal oder auf einer Dachterrasse über der Stadt.",
+    "about.v.eyebrow":"Unsere Arbeitsweise","about.v.title":"Worauf du dich <em>verlassen kannst</em>",
+    "about.v1.t":"Ein Ansprechpartner","about.v1.d":"Von der ersten Nachricht bis zum Moment selbst hast du mit derselben Person zu tun.",
+    "about.v2.t":"Liebe zum Detail","about.v2.d":"Jede Kerze, jedes Blütenblatt und jeder Buchstabe hat seinen festen Platz im Design.",
+    "about.v3.t":"Volle Diskretion","about.v3.d":"Wir arbeiten im Hintergrund. Dein Partner merkt nichts, bis der Moment gekommen ist.",
+    "about.cta":"Sollen wir <em>euren Moment</em> gemeinsam planen?",
+    "pr.eyebrow":"Pakete","pr.title":"Drei Pakete, <em>rundum organisiert</em>","pr.sub":"Jedes Paket ist in Rot oder Weiß erhältlich. Aufbau, Styling und Abbau sind immer inklusive.",
+    "pr.choose":"Dieses Paket anfragen","pr.colors":"Rot oder Weiß","pr.incl":"Inklusive","pr.photos":"Fotos",
+    "pr.d.backdrop":"Ein Blumenherz als Mittelpunkt. Klassisch, dezent und komplett.",
+    "pr.d.xl":"Das klassische Herz, ergänzt durch zusätzliches Kerzenlicht und ein persönliches Willkommensschild.",
+    "pr.d.trio":"Drei Blumenherzen als Ensemble, mit Sparkulars für einen unvergesslichen Auftritt.",
+    "pr.own.t":"Ein Antrag nach Maß","pr.own.d":"Lieber etwas anderes? Kombiniere ein Paket mit Extras oder teile deine eigene Idee. Wir machen daraus ein persönliches Angebot.","pr.own.cta":"Idee besprechen",
+    "ex.eyebrow":"Extras","ex.title":"Das <em>i-Tüpfelchen</em>","ex.sub":"Jedes Extra ist mit jedem Paket kombinierbar.",
+    "ex.h.deco":"Deko und Blumen","ex.h.media":"Fotografie, Film und Musik","ex.h.letters":"Leuchtbuchstaben (Miete)",
+    "ex.letters.note":"Etwa 1 Meter hoch, Mietdauer 48 Stunden.",
+    "how.eyebrow":"Ablauf","how.title":"So entsteht <em>ein Antrag</em>",
+    "how.1.t":"Kennenlernen","how.1.d":"Du erzählst uns eure Geschichte, das Wunschdatum und deine Wünsche zur Location.",
+    "how.2.t":"Entwurf","how.2.d":"Wir erstellen einen Vorschlag mit Paket, Farbe, Location und eventuellen Extras.",
+    "how.3.t":"Aufbau","how.3.d":"Am Tag selbst richten wir die Location ein. Fotograf und Musiker stehen bereit, außer Sicht.",
+    "how.4.t":"Der Moment","how.4.d":"Du stellst die Frage. Danach räumen wir alles weg; die Fotos und der Film bleiben.",
+    "ga.eyebrow":"Galerie","ga.title":"Unsere Arbeit, <em>nach Setting</em>","ga.sub":"Wähle ein Setting und öffne ein Foto oder einen Film in voller Ansicht.","ga.film":"Film","ga.count":"{n} Fotos und Filme",
+    "faq.eyebrow":"Häufige Fragen","faq.title":"Häufig gestellte <em>Fragen</em>","faq.sub":"Über Preise, Locations, Planung, Fotografie und Extras.",
+    "faq.more.t":"Noch <em>eine Frage?</em>","faq.more.d":"Deine Frage ist nicht dabei? Kein Problem. Ruf uns an oder schreib uns per WhatsApp. Wir denken gern mit, über Location, Styling und alle Möglichkeiten, deinen Antrag genau so zu gestalten, wie du ihn dir vorstellst.","ui.swipe":"Wischen für mehr →","ft.credit":"Website von",
+    "co.eyebrow":"Kontakt","co.title":"Kennenlernen <em>vereinbaren</em>","co.sub":"Erzähl uns von euren Plänen. Du erhältst so bald wie möglich ein persönliches Angebot.",
+    "f.name":"Name","f.mail":"E-Mail","f.tel":"Telefon","f.date":"Wunschdatum","f.subj":"Betreff","f.custom":"Antrag nach Maß","f.letters":"Leuchtbuchstaben mieten","f.other":"Sonstige Frage",
+    "f.msg":"Nachricht","f.send":"Nachricht senden","f.ph":"Erzähl uns vom Datum, der Location und deinen Vorstellungen.",
+    "f.fail":"Das Senden hat nicht geklappt. Bitte versuch es erneut oder schreib uns per WhatsApp.","f.err":"Bitte gib deinen Namen, eine gültige E-Mail-Adresse und eine Nachricht ein.",
+    "f.ok":"Danke, {n}. Wir haben deine Nachricht erhalten und melden uns so bald wie möglich.",
+    "co.direct":"Direkter Kontakt","co.wa":"Nachricht senden","co.call":"Telefon","co.mail":"E-Mail","co.hours":"Täglich erreichbar von 10:00 bis 22:00",
+    "ft.ask":"Eine Frage oder eine Idee? <em>Wir helfen gern.</em>","ft.form":"Kontaktformular",
+    "ft.about":"Heiratsanträge in den Niederlanden, Belgien und Luxemburg. Gestaltet, aufgebaut und festgehalten von unserem Team.",
+    "ft.contact":"Kontakt","ft.hours":"Täglich 10:00–22:00","ft.menu":"Menü","ft.area":"Einsatzgebiet","ft.nl":"Niederlande","ft.be":"Belgien","ft.lu":"Luxemburg",
+    "ft.tag":"Styling · Blumen · Musik · Fotografie",
+    "cat.kas":"Glashaus","cat.skyline":"Skyline und Rooftop","cat.kasteel":"Schloss und Palast","cat.buiten":"Tropisch und draußen","cat.details":"Rosen und Details","cat.films":"Filme","film.kasring":"Der Ring, im Glashaus","film.hearts":"Weiße Herzen mit Initialen","film.piano":"Live-Piano und rote Rosen","film.rotterdam":"Rotterdam, rote Herzen an der Maas","film.bridge":"Sonnenuntergang, mit Familie","film.castle":"Schlosssaal mit Live-Geiger","film.church":"Rote Deko in einer alten Kirche","film.beach":"Strandantrag von oben","film.heli":"Per Helikopter zum Ja","film.lake":"LOVE-Buchstaben am Wasser","tm.eyebrow":"Unser Team","tm.title":"Die Menschen <em>hinter dem Moment</em>","tm.sub":"Wir arbeiten mit einem festen Team aus Fotografen, Videografen und Musikern, die wir kennen und denen wir vertrauen.","tm.lead":"Fester Fotograf und Videograf","tm.leadd":"Emir hält all unsere großen Momente fest, von der ersten Kerze bis zum Ja. Fast jeder Film auf dieser Seite stammt von ihm.","tm.photo":"Foto und Video","tm.violin":"Geiger","tm.violin.f":"Geigerin","tm.piano.f":"Pianistin","tm.music":"Musik und Geiger","rv.all.eyebrow":"Erfahrungen","rv.all.title":"Was Paare <em>uns schrieben</em>","rv.nl":"Kunde aus den Niederlanden","rv.abroad":"Kunde aus dem Ausland","rv.fam":"Im Namen der ganzen Familie",
+    "cap.loft-proposal":"Historischer Saal","cap.greenhouse-candles":"Glashaus bei Kerzenlicht","cap.ring-hands":"Der Ring","cap.red-hearts":"Rote Rosen, türkisches Neonschild","cap.rooftop-river":"Dachterrasse am Wasser","cap.heart-arch":"Weißes Blumenherz","cap.castle":"Schloss bei Nacht","cap.ring-white":"Das Ja","cap.greenhouse-couple":"Hand in Hand","cap.rotterdam":"Rotterdam, Erasmusbrücke","cap.greenhouse-aisle":"Will you marry me?","cap.ring-black":"Das Detail",
+    "cap.amsterdam-violin":"Rote Herzen mit Live-Geiger","cap.amsterdam-hearts":"Antrag über dem IJ","cap.greenhouse-drone":"Glashaus von oben","cap.loft-violin":"Blumenherz mit Geiger","cap.hands":"Frisch verlobt"
+  }
+};
+
+/* ================= STATE ================= */
+let lang = "nl", view = "home", cat = "kas";
+try { const s = localStorage.getItem("mmp-lang"); if (T[s]) lang = s; } catch (e) {}
+const $ = id => document.getElementById(id);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const hoverable = matchMedia("(hover: hover)").matches;
+const t = k => T[lang][k] ?? k;
+const fill = (s, n) => s.replace("{n}", n);
+const src = m => m.v ? `f/${m.id}.jpg` : `p/${m.id}.jpg`;
+const FILM_ORDER = ["bridge", "kasring", "castle", "beach", "rotterdam", "lake", "heli", "church", "hearts", "piano"];
+const inCat = c => c === "all" ? MEDIA : c === "films" ? FILM_ORDER.map(id => MEDIA.find(m => m.id === id)) : MEDIA.filter(m => m.cat === c);
+const catLabel = c => t("cat." + c);
+const capOf = m => m.v ? t("film." + m.id) : catLabel(m.cat);
+
+/* ================= RENDER ================= */
+function carousel(imgs) {
+  return `<div class="car">
+    <div class="car-view">
+      <div class="car-track" tabindex="0" aria-label="${imgs.length} ${t("pr.photos")}">${imgs.map(i => `<img src="p/${i}.jpg" alt="" loading="lazy">`).join("")}</div>
+      <button class="car-btn prev" aria-label="‹">‹</button><button class="car-btn next" aria-label="›">›</button>
+      <span class="car-count"><span class="car-n">1</span> / ${imgs.length}</span>
+    </div>
+    <div class="thumbs">${imgs.map((i, n) => `<button aria-label="${n + 1}" ${n ? "" : 'aria-current="true"'}><img src="p/${i}.jpg" alt="" loading="lazy"></button>`).join("")}</div>
+  </div>`;
+}
+function renderPackages() {
+  $("pk-list").innerHTML = PKG.map(p => `
+    <article class="pk">
+      ${carousel(p.imgs)}
+      <div class="pk-info">
+        <h2>${p.name}</h2>
+        <p class="tagline">${t("pr.d." + p.id)}</p>
+        <div class="meta"><span class="price">€${p.price}</span><span class="chip"><i style="background:#a3141f"></i><i style="background:#f4ece0"></i>${t("pr.colors")}</span></div>
+        <h3>${t("pr.incl")}</h3>
+        <ul>${p.items[lang].map(i => i.startsWith("+ ") ? `<li class="plus">${i.slice(2)}</li>` : `<li>${i}</li>`).join("")}</ul>
+        <div class="actions"><button class="btn btn-gold" data-go="contact" data-subj="${p.id}">${t("pr.choose")}</button></div>
+      </div>
+    </article>`).join("");
+  const row = x => `<tr><td>${x.t[lang]}${x.n ? `<small>${x.n[lang]}</small>` : ""}</td><td>${typeof x.p === "string" ? x.p : x.p[lang]}</td></tr>`;
+  $("ex-deco").innerHTML = EX_DECO.map(row).join("");
+  $("ex-media").innerHTML = EX_MEDIA.map(row).join("");
+  $("ex-letters").innerHTML = EX_LETTERS.map(row).join("");
+  document.querySelectorAll(".car-track").forEach(tr => {
+    let raf = 0;
+    tr.addEventListener("scroll", () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => syncCar(tr)); }, { passive: true });
+  });
+}
+function syncCar(tr) {
+  const i = Math.round(tr.scrollLeft / tr.clientWidth), car = tr.closest(".car");
+  car.querySelector(".car-n").textContent = i + 1;
+  car.querySelectorAll(".thumbs button").forEach((d, n) => d.setAttribute("aria-current", n === i));
+}
+function carGo(car, i) {
+  const tr = car.querySelector(".car-track"), n = tr.children.length;
+  i = (i + n) % n;
+  tr.scrollTo({ left: i * tr.clientWidth, behavior: reduce ? "auto" : "smooth" });
+}
+function renderCats() {
+  $("cats").innerHTML = CATS.map(c => `<button class="cat" data-go="galerij" data-cat="${c.id}">
+    <img src="p/${c.cover}.jpg" alt="" loading="lazy"><span class="lbl"><b>${catLabel(c.id)}</b><small>${fill(t("gt.items"), inCat(c.id).length)}</small></span></button>`).join("");
+  const list = [...CATS.map(c => c.id), "films"];
+  $("dd-menu").innerHTML = list.map((c, i) => `${i === 5 ? "<hr>" : ""}<button data-go="galerij" data-cat="${c}">${catLabel(c)}<small>${inCat(c).length}</small></button>`).join("");
+  $("mnav-sub").innerHTML = list.map(c => `<button data-go="galerij" data-cat="${c}">${catLabel(c)}</button>`).join("");
+  $("filter").innerHTML = list.map(c => `<button data-filter="${c}" aria-pressed="${c === cat}">${catLabel(c)} <small>${inCat(c).length}</small></button>`).join("");
+}
+function renderGallery() {
+  const items = inCat(cat);
+  $("gal-h").textContent = catLabel(cat);
+  $("gal-n").textContent = fill(t("ga.count"), items.length);
+  $("grid").innerHTML = items.map((m, i) => `<button class="tile" data-idx="${i}">
+    <img src="${src(m)}" alt="${capOf(m)}" loading="lazy">${m.v ? `<span class="play" aria-hidden="true"></span><span class="cap">${capOf(m)}<small>${t("ga.film")}</small></span>` : ""}</button>`).join("");
+  document.querySelectorAll("#filter [data-filter]").forEach(b => b.setAttribute("aria-pressed", b.dataset.filter === cat));
+}
+function renderFaq() {
+  $("faq-page").innerHTML = FAQ[lang].map(g => `<div class="faq-group"><h3>${g.g}</h3>${g.q.map(([q, a]) => `<details><summary>${q}</summary><p class="ans">${a}</p></details>`).join("")}</div>`).join("");
+}
+
+function setLang(l) {
+  lang = l;
+  try { localStorage.setItem("mmp-lang", l); } catch (e) {}
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-i18n]").forEach(el => { const v = T[l][el.dataset.i18n]; if (v) el.textContent = v; });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => { const v = T[l][el.dataset.i18nHtml]; if (v) el.innerHTML = v; });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => el.placeholder = T[l][el.dataset.i18nPh]);
+  document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
+  $("lb-close").setAttribute("aria-label", t("nav.close"));
+  $("mnav-close").setAttribute("aria-label", t("nav.close"));
+  renderPackages(); renderCats(); renderGallery(); renderFaq(); setVbtn();
+  $("ok").hidden = true;
+}
+
+/* ================= NAVIGATION ================= */
+const VIEWS = ["home", "over", "pakketten", "galerij", "faq", "contact"];
+function go(v, c) {
+  if (!VIEWS.includes(v)) v = "home";
+  view = v;
+  if (c) { cat = c; renderGallery(); }
+  document.querySelectorAll("[data-view]").forEach(s => s.hidden = s.dataset.view !== v);
+  document.querySelectorAll(".mainnav > button[data-go], .dd-btn").forEach(b => {
+    if ((b.dataset.go || b.dataset.navgo) === v) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
+  });
+  closeMenus();
+  const hv = $("hv");
+  if (v === "home" && !paused) { const pr = hv.play(); if (pr) pr.catch(() => {}); } else hv.pause();
+  window.scrollTo({ top: 0, behavior: "instant" });
+  onScroll(); armReveal();
+  try { history.replaceState(null, "", "#" + v); } catch (e) {}
+}
+function closeMenus() {
+  const dd = $("dd");
+  dd.classList.remove("open"); $("dd-btn").setAttribute("aria-expanded", "false");
+  dd.classList.add("shut");
+  $("mnav").hidden = true; $("menu-btn").setAttribute("aria-expanded", "false");
+  $("wa-float").hidden = false;
+}
+$("dd").addEventListener("mouseleave", () => $("dd").classList.remove("shut"));
+$("dd-btn").addEventListener("click", e => {
+  e.stopPropagation();
+  if (hoverable) { go("galerij", "kas"); return; }
+  const open = !$("dd").classList.contains("open");
+  $("dd").classList.remove("shut");
+  $("dd").classList.toggle("open", open); $("dd-btn").setAttribute("aria-expanded", open);
+});
+$("menu-btn").addEventListener("click", () => { $("mnav").hidden = false; $("menu-btn").setAttribute("aria-expanded", "true"); $("wa-float").hidden = true; });
+$("mnav-close").addEventListener("click", closeMenus);
+
+function setFilter(c) {
+  cat = c; renderGallery();
+  const anchor = $("gal-top"), top = anchor.getBoundingClientRect().top + scrollY - $("bar").offsetHeight - document.querySelector(".filter").offsetHeight - 16;
+  if (scrollY > top) window.scrollTo({ top, behavior: "instant" });
+  document.querySelector(`#filter [data-filter="${c}"]`)?.scrollIntoView({ block: "nearest", inline: "nearest" });
+}
+
+document.addEventListener("click", e => {
+  if (!e.target.closest("#dd")) { $("dd").classList.remove("open"); $("dd-btn").setAttribute("aria-expanded", "false"); }
+  const car = e.target.closest(".car");
+  if (car) {
+    const tr = car.querySelector(".car-track"), cur = Math.round(tr.scrollLeft / tr.clientWidth);
+    if (e.target.closest(".car-btn")) { carGo(car, cur + (e.target.closest(".next") ? 1 : -1)); return; }
+    const th = e.target.closest(".thumbs button");
+    if (th) { carGo(car, [...th.parentElement.children].indexOf(th)); return; }
+  }
+  const tile = e.target.closest("[data-idx]");
+  if (tile) { openLb(+tile.dataset.idx); return; }
+  const f = e.target.closest("[data-filter]");
+  if (f) { setFilter(f.dataset.filter); return; }
+  const g = e.target.closest("[data-go]");
+  if (g) { if (g.dataset.subj) $("f-subj").value = g.dataset.subj; go(g.dataset.go, g.dataset.cat); return; }
+  const l = e.target.closest("[data-lang]");
+  if (l) setLang(l.dataset.lang);
+});
+addEventListener("keydown", e => {
+  if (e.key === "Escape") { if (!$("lb").hidden) closeLb(); else closeMenus(); }
+  if ($("lb").hidden) return;
+  if (e.key === "ArrowLeft") openLb(cur - 1);
+  if (e.key === "ArrowRight") openLb(cur + 1);
+});
+
+let ticking = false;
+function onScroll() { $("hdr").classList.toggle("solid", view !== "home" || scrollY > 40); }
+addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { onScroll(); ticking = false; }); } }, { passive: true });
+function setHH() { document.documentElement.style.setProperty("--hh", $("bar").offsetHeight + "px"); }
+addEventListener("resize", setHH);
+
+/* ================= HERO ================= */
+let paused = reduce, ni = 0;
+function setVbtn() { if (typeof syncVbtn === "function") syncVbtn(); }
+/* the button always shows what the film is really doing; a blocked autoplay shows "play" */
+function syncVbtn() { const hv = $("hv"); $("vbtn").textContent = hv.paused ? "▶  " + t("hero.play") : "❚❚  " + t("hero.pause"); $("hero-play").hidden = !hv.paused || paused; }
+$("hv").addEventListener("playing", syncVbtn);
+$("hv").addEventListener("pause", syncVbtn);
+function tryPlay() { const hv = $("hv"); hv.muted = true; const pr = hv.play(); if (pr) pr.then(syncVbtn).catch(syncVbtn); }
+$("vbtn").addEventListener("click", () => {
+  const hv = $("hv");
+  if (hv.paused) { paused = false; tryPlay(); } else { paused = true; hv.pause(); }
+  syncVbtn();
+});
+$("hero-play").addEventListener("click", () => { paused = false; tryPlay(); });
+setTimeout(syncVbtn, 1500);
+if (reduce) $("hv").removeAttribute("autoplay");
+$("neon").innerHTML = NEON.map((s, i) => `<span${i === 0 ? ' class="on"' : ""} aria-hidden="true">${s}</span>`).join("");
+const neonSpans = $("neon").children;
+setInterval(() => {
+  if (paused || view !== "home" || document.hidden) return;
+  neonSpans[ni].classList.remove("on");
+  ni = (ni + 1) % NEON.length;
+  neonSpans[ni].classList.add("on");
+}, 3600);
+
+/* ================= LIGHTBOX ================= */
+let cur = 0;
+function openLb(i) {
+  const items = inCat(cat); cur = (i + items.length) % items.length; const m = items[cur];
+  const img = $("lb-img"), vid = $("lb-vid");
+  vid.pause();
+  if (m.v) { img.hidden = true; vid.hidden = false; vid.poster = `f/${m.id}.jpg`; vid.src = `f/${m.id}.mp4`; vid.play().catch(() => {}); }
+  else { vid.hidden = true; vid.removeAttribute("src"); vid.load(); img.hidden = false; img.src = `p/${m.id}.jpg`; img.alt = capOf(m); }
+  $("lb-cap").innerHTML = `<small>${cur + 1} / ${items.length} · ${catLabel(m.cat)}</small>${capOf(m)}`;
+  $("lb").hidden = false; document.documentElement.classList.add("lock");
+  $("lb-close").focus({ preventScroll: true });
+}
+function closeLb() { $("lb-vid").pause(); $("lb").hidden = true; document.documentElement.classList.remove("lock"); }
+$("lb-close").onclick = closeLb;
+$("lb-prev").onclick = () => openLb(cur - 1);
+$("lb-next").onclick = () => openLb(cur + 1);
+$("lb").addEventListener("click", e => { if (e.target === $("lb")) closeLb(); });
+
+/* ================= FORM ================= */
+$("form").addEventListener("submit", e => {
+  e.preventDefault();
+  const name = $("f-name").value.trim(), mail = $("f-mail").value.trim(), msg = $("f-msg").value.trim(), ok = $("ok");
+  ok.hidden = false;
+  if (!name || !msg || !/^\S+@\S+\.\S+$/.test(mail)) { ok.textContent = t("f.err"); return; }
+  const btn = e.target.querySelector('[type="submit"]'); btn.disabled = true;
+  fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(e.target)).toString() })
+    .then(r => { if (!r.ok) throw 0; ok.textContent = fill(t("f.ok"), name); e.target.reset(); })
+    .catch(() => { ok.textContent = t("f.fail"); })
+    .finally(() => { btn.disabled = false; });
+});
+
+/* ================= REVEAL ================= */
+const io = "IntersectionObserver" in window && !reduce ? new IntersectionObserver(es => es.forEach(en => {
+  if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+}), { rootMargin: "0px 0px 15% 0px" }) : null;
+function armReveal() {
+  if (!io) return;
+  requestAnimationFrame(() => document.querySelectorAll(`[data-view="${view}"] .rv:not(.in)`).forEach(el => {
+    if (el.getBoundingClientRect().top > innerHeight) io.observe(el);
+  }));
+}
+
+/* ================= BOOT ================= */
+setHH();
+setLang(lang);
+const start = (location.hash || "#home").slice(1);
+go(VIEWS.includes(start) ? start : "home");
+addEventListener("hashchange", () => { const h = location.hash.slice(1); if (VIEWS.includes(h) && h !== view) go(h); });
+</script>
+
+</body>
+</html>
